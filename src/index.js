@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import './index.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import 'material-design-lite/material.js'
+
+injectTapEventPlugin();
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

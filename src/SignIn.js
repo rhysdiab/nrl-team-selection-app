@@ -1,11 +1,12 @@
 import React from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
 
-const SignIn = () => {
-  return(
+const SignIn = (props) => {
+  return (
     <div>
-      <button className="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"> Sign In</button>
+      <RaisedButton label="Sign In" />
     </div>
-  )
-}
+  );
+};
 
 export default SignIn;
