@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MultiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.scss';
 import SignIn from './SignIn';
+import Loading from './Loading';
 
-class App extends Component {
-  render() {
-    return (
-      <MultiThemeProvider>
-        <div className="App">
-          <div>
+const App = ({ auth, signIn, signOut }) => {
+  return (
+    <MultiThemeProvider>
+      <main className="Application">
+        <div className="Application--sidebar">
             <SignIn />
-          </div>
+           <Loading />
         </div>
-      </MultiThemeProvider>
-    );
-  }
-}
-
+      </main>
+    </MultiThemeProvider>
+  );
+};
 export default App;
