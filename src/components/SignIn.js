@@ -1,10 +1,10 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const SignIn = (props) => {
+const SignIn = ({signIn}) => {
   return (
     <div>
-      <RaisedButton label="Sign In" />
+      <RaisedButton label="Sign In" onClick={signIn} />
     </div>
   );
 };
