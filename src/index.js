@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import './index.scss';
 import initialState from './initial-state';
 import reducer from './reducers';
-import App from './components/App';
+import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 
 injectTapEventPlugin();
@@ -26,6 +26,6 @@ const store = createStore(
 );
 
 ReactDOM.render(<Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>, document.getElementById('root'));
 registerServiceWorker();

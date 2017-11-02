@@ -5,6 +5,7 @@ import { signIn, signOut } from '../actions/auth';
 
 const mapStateToProps = ({ auth }) => {
   return { auth };
+  debugger;
 };
 
 const mapDispatchToProps = (dispatch) => {

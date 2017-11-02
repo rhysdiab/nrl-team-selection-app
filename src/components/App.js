@@ -9,8 +9,9 @@ const App = ({ auth, signIn, signOut }) => {
     <MultiThemeProvider>
       <main className="Application">
         <div className="Application--sidebar">
-            <SignIn />
-           <Loading />
+          { auth.status === 'ANONYMOUS' && <SignIn signIn={signIn}/> }
+          { auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading /> }
+          <Loading />
         </div>
       </main>
     </MultiThemeProvider>

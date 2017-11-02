@@ -1,0 +1,78 @@
+[debug] [2017-11-02T21:06:00.720Z] ----------------------------------------------------------------------
+[debug] [2017-11-02T21:06:00.722Z] Command:       /usr/local/Cellar/node/8.7.0/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-02T21:06:00.722Z] CLI Version:   3.14.0
+[debug] [2017-11-02T21:06:00.722Z] Platform:      darwin
+[debug] [2017-11-02T21:06:00.722Z] Node Version:  v8.7.0
+[debug] [2017-11-02T21:06:00.723Z] Time:          Fri Nov 03 2017 08:06:00 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:00.723Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-02T21:06:00.734Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-02T21:06:00.734Z] > authorizing via signed-in user
+[debug] [2017-11-02T21:06:00.736Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-02T21:06:00.736Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/GgLXVwu8TWGt8j-elmgO2r7MUYVDY30pLV9sKZV-qBA',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Nov 03 2017 08:06:00 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:00.975Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:00.982Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nrl-team-selection-app  
+ Fri Nov 03 2017 08:06:00 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:02.004Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:02.005Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nrl-team-selection-app/tokens  
+ Fri Nov 03 2017 08:06:02 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:02.979Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/rhys/projects/nrl-team-selection-app'...
+[info] 
+[debug] [2017-11-02T21:06:02.982Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/nrl-team-selection-app  
+ Fri Nov 03 2017 08:06:02 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:08.272Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:08.273Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/699085181524/clients/_:getWebAppConfig  
+ Fri Nov 03 2017 08:06:08 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:13.996Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:14.026Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/Users/rhys/.config/yarn/global/node_modules/firebase-tools/lib/serve/hosting.js:34:18)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1371:10)
+    at _combinedTickCallback (internal/process/next_tick.js:135:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2017-11-02T21:06:26.595Z] ----------------------------------------------------------------------
+[debug] [2017-11-02T21:06:26.597Z] Command:       /usr/local/Cellar/node/8.7.0/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-02T21:06:26.597Z] CLI Version:   3.14.0
+[debug] [2017-11-02T21:06:26.597Z] Platform:      darwin
+[debug] [2017-11-02T21:06:26.597Z] Node Version:  v8.7.0
+[debug] [2017-11-02T21:06:26.597Z] Time:          Fri Nov 03 2017 08:06:26 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:26.598Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-02T21:06:26.609Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-02T21:06:26.610Z] > authorizing via signed-in user
+[debug] [2017-11-02T21:06:26.611Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nrl-team-selection-app  
+ Fri Nov 03 2017 08:06:26 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:27.684Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:27.685Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nrl-team-selection-app/tokens  
+ Fri Nov 03 2017 08:06:27 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:28.467Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/rhys/projects/nrl-team-selection-app'...
+[info] 
+[debug] [2017-11-02T21:06:28.470Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/nrl-team-selection-app  
+ Fri Nov 03 2017 08:06:28 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:29.765Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:29.765Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/699085181524/clients/_:getWebAppConfig  
+ Fri Nov 03 2017 08:06:29 GMT+1100 (AEDT)
+[debug] [2017-11-02T21:06:31.505Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-02T21:06:31.519Z] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/Users/rhys/.config/yarn/global/node_modules/firebase-tools/lib/serve/hosting.js:34:18)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1371:10)
+    at _combinedTickCallback (internal/process/next_tick.js:135:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: An unexpected error has occurred.
