@@ -41,7 +41,6 @@ const initialState = {
       photoURL: 'https://placekitten.com/g/200/200'
     }
   },
-  newMessage: ''
 };
 
 export default initialState;
