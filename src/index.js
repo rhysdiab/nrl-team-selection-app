@@ -9,6 +9,7 @@ import initialState from './initial-state';
 import reducer from './reducers';
 import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
+import { startListeningToAuthChanges } from './actions/auth';
 
 injectTapEventPlugin();
 
@@ -29,3 +30,5 @@ ReactDOM.render(<Provider store={store}>
     <AppContainer />
   </Provider>, document.getElementById('root'));
 registerServiceWorker();
+
+store.dispatch(startListeningToAuthChanges());
