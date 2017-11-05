@@ -10,6 +10,9 @@ import reducer from './reducers';
 import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
+import { startListeningForUsers } from './actions/users';
+
+//TODO add a team action and reducer and dispatch when a user is created
 
 injectTapEventPlugin();
 
@@ -32,3 +35,4 @@ ReactDOM.render(<Provider store={store}>
 registerServiceWorker();
 
 store.dispatch(startListeningToAuthChanges());
+store.dispatch(startListeningForUsers());
