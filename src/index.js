@@ -11,6 +11,7 @@ import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
+import { startListeningForTeams } from './actions/teams';
 
 //TODO add a team action and reducer and dispatch when a user is created
 
@@ -36,3 +37,4 @@ registerServiceWorker();
 
 store.dispatch(startListeningToAuthChanges());
 store.dispatch(startListeningForUsers());
+store.dispatch(startListeningForTeams());

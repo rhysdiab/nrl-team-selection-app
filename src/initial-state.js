@@ -6,7 +6,7 @@ const initialState = {
     photoURL: null,
     uid: null
   },
-  team: {
+  teams: {
     players: {
         1: 'Matt Dufty',
         2: 'Jason Nightingale',
