@@ -12,8 +12,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
-//TODO add a team action and reducer and dispatch when a user is created
-
 injectTapEventPlugin();
 
 const middleware = [ thunk ];

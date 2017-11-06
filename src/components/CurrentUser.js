@@ -12,10 +12,13 @@ const CurrentUser = ({ auth, signOut }) => {
         className="CurrentUser--photo"
         src={ auth.photoURL }
         alt={ auth.displayName }
+        height="50px"
+        width="50px"
       />
       <div>
+      <h5> Choose Your Team </h5>
         {map(currentUserTeam, (player, key) => (
-          <ul>
+          <ul key={key}>
             <li> {key}: {player} </li>
           </ul>
         ))}
