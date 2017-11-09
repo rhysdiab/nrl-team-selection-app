@@ -1,7 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import initialState from '../initial-state';
-import { DragSource } from 'react-dnd';
 import map from 'lodash/map';
 import './CurrentUser.scss';
 import Player from './Player';
