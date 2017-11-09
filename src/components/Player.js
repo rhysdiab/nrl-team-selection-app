@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types';
+import ItemTypes from './ItemTypes';
 
 const playerSource = {
   beginDrag(props) {

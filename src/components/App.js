@@ -1,4 +1,6 @@
 import React from 'react';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import MultiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.scss';
 import SignIn from './SignIn';
@@ -19,4 +21,4 @@ const App = ({ auth, signIn, signOut }) => {
     </MultiThemeProvider>
   );
 };
-export default App;
+export default DragDropContext(HTML5Backend)(App);
