@@ -4,6 +4,7 @@ import initialState from '../initial-state';
 import map from 'lodash/map';
 import './CurrentUser.scss';
 import Player from './Player';
+import PositionNumber from './PositionNumber';
 
 const CurrentUser = ({ auth, signOut }) => {
   const currentUserTeam = initialState.teams.players;
@@ -18,11 +19,15 @@ const CurrentUser = ({ auth, signOut }) => {
       />
       <div>
         <h5> Choose Your Team </h5>
+        <ul>
         {map(currentUserTeam, (player, key) =>
-          <ul>
-            <Player key={key} playerNumber={key} player={player} />
-          </ul>
+
+            <PositionNumber key={key}>
+              <Player playerNumber={key} player={player} />
+            </PositionNumber>
+
         )}
+        </ul>
       </div>
       <div className="CurrentUser--identification">
         <h3 className="CurrentUser--displayName">
