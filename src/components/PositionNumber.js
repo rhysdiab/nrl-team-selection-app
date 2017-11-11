@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import './PositionNumber.scss';
+import Player from './Player';
 
 class PositionNumber extends Component {
   render() {
+    const {
+      positionNumber,
+      player
+    } = this.props;
     return (
       <div className="PositionNumber">
-        {this.props.children}
+        <li>
+          {positionNumber}: <Player player={player}/>
+        </li>
       </div>
     );
   }

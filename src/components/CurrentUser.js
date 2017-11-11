@@ -3,7 +3,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import initialState from '../initial-state';
 import map from 'lodash/map';
 import './CurrentUser.scss';
-import Player from './Player';
 import PositionNumber from './PositionNumber';
 
 const CurrentUser = ({ auth, signOut }) => {
@@ -20,13 +19,13 @@ const CurrentUser = ({ auth, signOut }) => {
       <div>
         <h5> Choose Your Team </h5>
         <ul>
-        {map(currentUserTeam, (player, key) =>
-
-            <PositionNumber key={key}>
-              <Player playerNumber={key} player={player} />
-            </PositionNumber>
-
-        )}
+          {map(currentUserTeam, (player, key) =>
+            <PositionNumber
+              key={key}
+              player={player}
+              positionNumber={key}
+            />
+          )}
         </ul>
       </div>
       <div className="CurrentUser--identification">

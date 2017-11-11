@@ -36,11 +36,11 @@ class Player extends Component {
     isDragging: PropTypes.bool.isRequired
   };
   render() {
-    const { connectDragSource, isDragging, player, playerNumber } = this.props;
+    const { connectDragSource, isDragging, player } = this.props;
     return connectDragSource(
-      <li>
-        {' '}{playerNumber}: {player}{' '}
-      </li>
+      <span>
+        {player}
+      </span>
     );
   }
 }

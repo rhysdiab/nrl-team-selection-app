@@ -12,7 +12,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
-//TODO create a PositionNumber component (similar to the square in the example) and put the player name as a child component
+//Add key (position number) on the PlayerPosition component
 //Develop plan to to manage the state of the player position and how it should change or not change in respones to inputs
 
 injectTapEventPlugin();
