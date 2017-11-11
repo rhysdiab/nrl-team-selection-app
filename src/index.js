@@ -12,8 +12,12 @@ import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
-//Add key (position number) on the PlayerPosition component
-//Develop plan to to manage the state of the player position and how it should change or not change in respones to inputs
+//Easy TODO
+  //Center all divs and components
+  //put each player indide a card
+
+//Hard TODO
+  //Develop plan to to manage the state of the player position and how it should change or not change in respones to inputs
 
 injectTapEventPlugin();
 
