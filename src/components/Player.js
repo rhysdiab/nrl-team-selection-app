@@ -8,6 +8,12 @@ const playerSource = {
     return {
       player: props.player
     };
+  },
+
+  endDrag(props, monitor, component) {
+    if (!monitor.didDrop()) {
+      return;
+    }
   }
 };
 
@@ -30,17 +36,13 @@ class Player extends Component {
     isDragging: PropTypes.bool.isRequired
   };
   render() {
-    const {
-      connectDragSource,
-      isDragging,
-      player,
-      playerNumber
-    } = this.props;
+    const { connectDragSource, isDragging, player, playerNumber } = this.props;
     return connectDragSource(
-        <li> {playerNumber}: {player} </li>
+      <li>
+        {' '}{playerNumber}: {player}{' '}
+      </li>
     );
   }
-
 }
 
 export default DragSource(ItemTypes.PLAYER, playerSource, collect)(Player);
