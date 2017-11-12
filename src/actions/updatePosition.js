@@ -1,10 +1,9 @@
 
-export const updatePosition = (user) => {
+export const updatePosition = (positionNumber) => {
+  console.log(positionNumber);
   return {
     type: 'UPDATE_POSITION',
-    displayName: user.displayName,
-    uid: user.uid,
-    photoURL: user.photoURL
+    positionNumber: positionNumber++
   };
 };
 
