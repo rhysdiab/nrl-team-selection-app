@@ -11,7 +11,7 @@ class PositionNumber extends Component {
     return (
       <div className="PositionNumber">
         <li>
-          {positionNumber}: <Player player={player}/>
+          {positionNumber}: <Player player={player} positionNumber={positionNumber}/>
         </li>
       </div>
     );

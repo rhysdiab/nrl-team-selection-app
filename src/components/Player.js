@@ -36,10 +36,10 @@ class Player extends Component {
     isDragging: PropTypes.bool.isRequired
   };
   render() {
-    const { connectDragSource, isDragging, player } = this.props;
+    const { connectDragSource, isDragging, player, positionNumber } = this.props;
     return connectDragSource(
       <span>
-        {player}
+        {player} <input type="text" name="Move To Number" value={positionNumber} onChange={this.handleChange}/>
       </span>
     );
   }

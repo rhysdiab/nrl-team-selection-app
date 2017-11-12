@@ -17,7 +17,9 @@ import { startListeningForUsers } from './actions/users';
   //put each player indide a card
 
 //Hard TODO
-  //Develop plan to to manage the state of the player position and how it should change or not change in respones to inputs
+  //Create a function to dispatch an action to update the application state when you enter a new number into the input and increment all the other fields down to accomodate
+  //Replace the input with the drag and drop functionality
+
 
 injectTapEventPlugin();
 
