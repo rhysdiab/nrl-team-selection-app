@@ -28,12 +28,6 @@ function collect(connect, monitor) {
 }
 
 class Player extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: this.props.positionNumber};
-
-    this.handleClick = this.handleClick.bind(this);
-  }
 
   static propTypes = {
     player: PropTypes.string.isRequired,
@@ -43,15 +37,14 @@ class Player extends Component {
     isDragging: PropTypes.bool.isRequired
   };
 
-  handleClick() {
+  handleClick = () => {
     console.log('handle click');
   }
-
   render() {
     const { connectDragSource, isDragging, player } = this.props;
-    return connectDragSource(
+    return (
       <span>
-        <button onClick={(e) => this.handleClick(e)}>{player} </button>
+        <button onClick={this.handleClick}>{player} </button>
       </span>
     );
   }

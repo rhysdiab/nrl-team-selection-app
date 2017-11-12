@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import MultiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -7,18 +7,22 @@ import SignIn from './SignIn';
 import Loading from './Loading';
 import CurrentUser from './CurrentUser';
 
-const App = ({ auth, signIn, signOut }) => {
-  return (
-    <MultiThemeProvider>
-      <main className="Application">
-        <div className="Application--sidebar">
-          {auth.status === 'ANONYMOUS' && <SignIn signIn={signIn} />}
-          {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
-          {auth.status === 'SIGNED_IN' &&
-            <CurrentUser auth={auth} signOut={signOut} />}
-        </div>
-      </main>
-    </MultiThemeProvider>
-  );
-};
+class App extends Component {
+  render() {
+    const { auth, signIn, signOut } = this.props;
+    return (
+      <MultiThemeProvider>
+        <main className="Application">
+          <div className="Application--sidebar">
+            {auth.status === 'ANONYMOUS' && <SignIn signIn={signIn} />}
+            {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
+            {auth.status === 'SIGNED_IN' &&
+              <CurrentUser auth={auth} signOut={signOut} />}
+          </div>
+        </main>
+      </MultiThemeProvider>
+    );
+  }
+}
+
 export default DragDropContext(HTML5Backend)(App);
