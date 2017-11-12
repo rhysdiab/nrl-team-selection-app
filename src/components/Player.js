@@ -32,11 +32,7 @@ class Player extends Component {
     super(props);
     this.state = {value: this.props.positionNumber};
 
-    this.updatePosition = this.updatePosition.bind(this);
-  }
-
-  updatePosition(e) {
-    console.log(e);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   static propTypes = {
@@ -47,11 +43,15 @@ class Player extends Component {
     isDragging: PropTypes.bool.isRequired
   };
 
+  handleClick() {
+    console.log('handle click');
+  }
+
   render() {
-    const { connectDragSource, isDragging, player, positionNumber } = this.props;
+    const { connectDragSource, isDragging, player } = this.props;
     return connectDragSource(
       <span>
-        {player} <input type="text" name="Move To Number" defaultValue={positionNumber} onChange={this.updatePosition}/>
+        <button onClick={(e) => this.handleClick(e)}>{player} </button>
       </span>
     );
   }
