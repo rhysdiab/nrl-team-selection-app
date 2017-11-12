@@ -28,6 +28,17 @@ function collect(connect, monitor) {
 }
 
 class Player extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: this.props.positionNumber};
+
+    this.updatePosition = this.updatePosition.bind(this);
+  }
+
+  updatePosition(e) {
+    console.log(e);
+  }
+
   static propTypes = {
     player: PropTypes.string.isRequired,
 
@@ -35,11 +46,12 @@ class Player extends Component {
     connectDragSource: PropTypes.func.isRequired,
     isDragging: PropTypes.bool.isRequired
   };
+
   render() {
     const { connectDragSource, isDragging, player, positionNumber } = this.props;
     return connectDragSource(
       <span>
-        {player} <input type="text" name="Move To Number" value={positionNumber} onChange={this.handleChange}/>
+        {player} <input type="text" name="Move To Number" defaultValue={positionNumber} onChange={this.updatePosition}/>
       </span>
     );
   }
