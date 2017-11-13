@@ -17,8 +17,9 @@ import { startListeningForUsers } from './actions/users';
   //put each player indide a card
 
 //Hard TODO
-  //Create a function to dispatch an action to update the application state when you enter a new number into the input and increment all the other fields down to accomodate
-  //Replace the input with the drag and drop functionality
+  //remove team reducers and actions
+  //convert the team to a single array and use the index of that array as the positionNumber
+  //create an action to create a new array
 
 
 injectTapEventPlugin();

@@ -26,6 +26,7 @@ const initialState = {
         16: 'Leeson Ah Mau',
         17: 'Bryan Lawrie'
       },
+
       timeStamp: Date.now() - 600,
       uid: 'firstUser'
     },

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types';
 import ItemTypes from './ItemTypes';
-import updatePosition from '../actions/updatePosition';
+import updateTeam from '../actions/team';
 
 const playerSource = {
   beginDrag(props) {
@@ -40,7 +40,7 @@ class Player extends Component {
 
   handleClick = () => {
     console.log('handle click called');
-    updatePosition(this.props.positionNumber);
+    updateTeam(this.props.positionNumber);
   }
   render() {
     const { connectDragSource, isDragging, player, positionNumber } = this.props;
