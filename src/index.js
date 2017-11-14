@@ -17,9 +17,7 @@ import { startListeningForUsers } from './actions/users';
   //put each player indide a card
 
 //Hard TODO
-  //remove team reducers and actions
-  //convert the team to a single array and use the index of that array as the positionNumber
-  //create an action to create a new array
+  //Create a drop target by dispatching action movePlayer, modelling moveKnight in positionNumber
 
 
 injectTapEventPlugin();

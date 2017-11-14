@@ -1,3 +1,6 @@
-export default {
-	PLAYER: 'player',
-}
+
+const ItemTypes = {
+  PLAYER: 'player'
+};
+
+export default ItemTypes;

@@ -41,7 +41,6 @@ class Player extends Component {
       connectDragSource,
       isDragging,
       player,
-      positionNumber
     } = this.props;
     return connectDragSource(
       <span>
