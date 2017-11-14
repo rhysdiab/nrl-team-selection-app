@@ -1,12 +1,13 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import keyIndex from 'react-key-index';
 import initialState from '../initial-state';
-import map from 'lodash/map';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
 const CurrentUser = ({ auth, signOut }) => {
-  const currentUserTeam = initialState.teams.players;
+  const currentUserTeamOriginal = initialState.team;
+  const currentUserTeam = keyIndex(currentUserTeamOriginal, 1);
   return (
     <div className="CurrentUser">
       <img
@@ -19,13 +20,16 @@ const CurrentUser = ({ auth, signOut }) => {
       <div>
         <h5> Choose Your Team </h5>
         <ul>
-          {map(currentUserTeam, (player, key) =>
-            <PositionNumber
-              key={key}
-              player={player}
-              positionNumber={key}
-            />
-          )}
+          {currentUserTeam.map((player, index) => {
+            const positionNumber = index + 1;
+            return (
+              <PositionNumber
+                key={player.id}
+                player={player.value}
+                positionNumber={positionNumber}
+              />
+            );
+          })}
         </ul>
       </div>
       <div className="CurrentUser--identification">

@@ -6,30 +6,25 @@ const initialState = {
     photoURL: null,
     uid: null
   },
-  teams: {
-    players: {
-        1: 'Matt Dufty',
-        2: 'Jason Nightingale',
-        3: 'Tim Lafai',
-        4: 'Euan Aitkin',
-        5: 'Nene Mcdonald',
-        6: 'Gareth Widdop',
-        7: 'Ben Hunt',
-        8: 'Paul Vaughen',
-        9: 'Cameron Mcinnes',
-        10: 'James Graham',
-        11: 'Tyson Frizell',
-        12: 'Joel Thompson',
-        13: 'Jack Debelin',
-        14: 'Jai Field',
-        15: 'Tariq Sims',
-        16: 'Leeson Ah Mau',
-        17: 'Bryan Lawrie'
-      },
-
-      timeStamp: Date.now() - 600,
-      uid: 'firstUser'
-    },
+  team: [
+        'Matt Dufty',
+        'Jason Nightingale',
+        'Tim Lafai',
+        'Euan Aitkin',
+        'Nene Mcdonald',
+        'Gareth Widdop',
+        'Ben Hunt',
+        'Paul Vaughen',
+        'Cameron Mcinnes',
+        'James Graham',
+        'Tyson Frizell',
+        'Joel Thompson',
+        'Jack Debelin',
+        'Jai Field',
+        'Tariq Sims',
+        'Leeson Ah Mau',
+        'Bryan Lawrie'
+      ],
   users: {
     'firstUser': {
       displayName: 'Bill Murray',

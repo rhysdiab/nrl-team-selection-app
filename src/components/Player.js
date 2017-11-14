@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types';
 import ItemTypes from './ItemTypes';
-import updateTeam from '../actions/team';
 
 const playerSource = {
   beginDrag(props) {
@@ -29,7 +28,6 @@ function collect(connect, monitor) {
 }
 
 class Player extends Component {
-
   static propTypes = {
     player: PropTypes.string.isRequired,
 
@@ -38,15 +36,16 @@ class Player extends Component {
     isDragging: PropTypes.bool.isRequired
   };
 
-  handleClick = () => {
-    console.log('handle click called');
-    updateTeam(this.props.positionNumber);
-  }
   render() {
-    const { connectDragSource, isDragging, player, positionNumber } = this.props;
+    const {
+      connectDragSource,
+      isDragging,
+      player,
+      positionNumber
+    } = this.props;
     return connectDragSource(
       <span>
-        <button onClick={this.handleClick}>{player} </button>
+        {player}
       </span>
     );
   }
