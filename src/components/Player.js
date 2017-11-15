@@ -6,7 +6,7 @@ import ItemTypes from './ItemTypes';
 const playerSource = {
   beginDrag(props) {
     return {
-      player: props.player
+      player: props.player,
     };
   },
 
@@ -14,6 +14,8 @@ const playerSource = {
     if (!monitor.didDrop()) {
       return;
     }
+
+    console.log(monitor.getDropResult());
   }
 };
 
