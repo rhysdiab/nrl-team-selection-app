@@ -15,9 +15,11 @@ import { startListeningForUsers } from './actions/users';
 //Easy TODO
   //Center all divs and components
   //put each player indide a card
+  //hard code position Number so react doesn't re-render on every drop event
 
 //Hard TODO
-//create update team action which takes in the player moved and player dropped
+//create team actions and reducers to create scaffholding for updating state
+//create update team algorithm in team action which takes in the player moved and player dropped
 //and returns a new team array
 
 

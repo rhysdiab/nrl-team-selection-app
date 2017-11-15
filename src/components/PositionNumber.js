@@ -3,7 +3,6 @@ import './PositionNumber.scss';
 import Player from './Player';
 import { DropTarget } from 'react-dnd';
 import ItemTypes from './ItemTypes';
-import movePlayer from '../actions/movePlayer';
 
 const positionTarget = {
   drop(props) {
