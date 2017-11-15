@@ -15,7 +15,12 @@ const playerSource = {
       return;
     }
 
-    console.log(monitor.getDropResult());
+    const playerMoved = props.player;
+    const playerDropped = monitor.getDropResult().player;
+
+    console.log(playerMoved, playerDropped);
+    //TODO create update team action which takes in the player moved and player dropped
+    //and returns a new team array
   }
 };
 

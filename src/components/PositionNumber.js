@@ -7,7 +7,7 @@ import movePlayer from '../actions/movePlayer';
 
 const positionTarget = {
   drop(props) {
-    return;
+    return props;
   }
 };
 

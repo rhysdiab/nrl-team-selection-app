@@ -17,7 +17,8 @@ import { startListeningForUsers } from './actions/users';
   //put each player indide a card
 
 //Hard TODO
-  //Create a drop target by dispatching action movePlayer, modelling moveKnight in positionNumber
+//create update team action which takes in the player moved and player dropped
+//and returns a new team array
 
 
 injectTapEventPlugin();
