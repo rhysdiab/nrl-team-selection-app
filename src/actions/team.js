@@ -1,8 +1,6 @@
 
 export const updateTeam = (playerMoved, playerDropped) => {
-
-  console.log('update team action was called');
-
+  console.log(playerMoved, playerDropped);
   return {
     type: 'UPDATE_TEAM',
     team: [playerMoved, playerDropped]

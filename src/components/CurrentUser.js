@@ -1,13 +1,12 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import keyIndex from 'react-key-index';
-import initialState from '../initial-state';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
-const CurrentUser = ({ auth, signOut, updateTeam }) => {
-  const currentUserTeamOriginal = initialState.team;
-  const currentUserTeam = keyIndex(currentUserTeamOriginal, 1);
+const CurrentUser = ({ auth, signOut, team, updateTeam }) => {
+  console.log(team);
+  const currentUserTeam = keyIndex(team, 1);
   return (
     <div className="CurrentUser">
       <img

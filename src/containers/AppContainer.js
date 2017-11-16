@@ -4,15 +4,15 @@ import { signIn, signOut } from '../actions/auth';
 import { updateTeam } from '../actions/team';
 
 
-const mapStateToProps = ({ auth }) => {
-  return { auth };
+const mapStateToProps = ({ auth, team }) => {
+  return { auth, team };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     signIn() { dispatch(signIn()); },
     signOut() { dispatch(signOut()); },
-    updateTeam() { dispatch(updateTeam())}
+    updateTeam(dragSource, dropTarget) { dispatch(updateTeam(dragSource, dropTarget))}
   };
 };
 
