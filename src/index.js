@@ -18,9 +18,9 @@ import { startListeningForUsers } from './actions/users';
   //hard code position Number so react doesn't re-render on every drop event
 
 //Hard TODO
-//create team actions and reducers to create scaffholding for updating state
-//create update team algorithm in team action which takes in the player moved and player dropped
-//and returns a new team array
+  //create algorithm which returns an array which replaces the position of
+    //the selected player and pushes every player below the drop source down one
+    //target
 
 
 injectTapEventPlugin();
