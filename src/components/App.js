@@ -9,7 +9,7 @@ import CurrentUser from './CurrentUser';
 
 class App extends Component {
   render() {
-    const { auth, signIn, signOut } = this.props;
+    const { auth, signIn, signOut, updateTeam } = this.props;
     return (
       <MultiThemeProvider>
         <main className="Application">
@@ -17,7 +17,7 @@ class App extends Component {
             {auth.status === 'ANONYMOUS' && <SignIn signIn={signIn} />}
             {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
             {auth.status === 'SIGNED_IN' &&
-              <CurrentUser auth={auth} signOut={signOut} />}
+              <CurrentUser auth={auth} signOut={signOut} updateTeam={updateTeam} />}
           </div>
         </main>
       </MultiThemeProvider>

@@ -18,9 +18,9 @@ const playerSource = {
     const playerMoved = props.player;
     const playerDropped = monitor.getDropResult().player;
 
-    console.log(playerMoved, playerDropped);
-    //TODO create update team action which takes in the player moved and player dropped
-    //and returns a new team array
+    const updateTeam = component.props.updateTeam;
+
+    updateTeam(playerMoved, playerDropped);
   }
 };
 
@@ -48,6 +48,7 @@ class Player extends Component {
       connectDragSource,
       isDragging,
       player,
+      updateTeam
     } = this.props;
     return connectDragSource(
       <span>

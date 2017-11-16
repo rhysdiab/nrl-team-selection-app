@@ -5,7 +5,7 @@ import initialState from '../initial-state';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
-const CurrentUser = ({ auth, signOut }) => {
+const CurrentUser = ({ auth, signOut, updateTeam }) => {
   const currentUserTeamOriginal = initialState.team;
   const currentUserTeam = keyIndex(currentUserTeamOriginal, 1);
   return (
@@ -27,6 +27,7 @@ const CurrentUser = ({ auth, signOut }) => {
                 key={player.id}
                 player={player.value}
                 positionNumber={positionNumber}
+                updateTeam={updateTeam}
               />
             );
           })}

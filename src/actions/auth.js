@@ -1,7 +1,5 @@
-
 import { auth, database, googleAuthProvider } from '../firebase';
 import pick from 'lodash/pick';
-
 export const signIn = () => {
   return (dispatch) => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
