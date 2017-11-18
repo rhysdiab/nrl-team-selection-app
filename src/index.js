@@ -18,9 +18,8 @@ import { startListeningForUsers } from './actions/users';
   //hard code position Number so react doesn't re-render on every drop event
 
 //Hard TODO
-  //create algorithm which returns an array which replaces the position of
-    //the selected player and pushes every player below the drop source down one
-    //target
+  //create reverse algorithm for players being dropped
+  //connect alogithm up to redux state
 
 
 injectTapEventPlugin();
