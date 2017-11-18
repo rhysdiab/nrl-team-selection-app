@@ -19,8 +19,9 @@ const playerSource = {
     const playerDropped = monitor.getDropResult().player;
 
     const updateTeam = component.props.updateTeam;
+    const initialTeam = component.props.team;
 
-    updateTeam(playerMoved, playerDropped);
+    updateTeam(initialTeam, playerMoved, playerDropped);
   }
 };
 
@@ -48,6 +49,7 @@ class Player extends Component {
       connectDragSource,
       isDragging,
       player,
+      team,
       updateTeam
     } = this.props;
     return connectDragSource(

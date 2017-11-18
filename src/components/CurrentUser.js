@@ -5,7 +5,6 @@ import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
 const CurrentUser = ({ auth, signOut, team, updateTeam }) => {
-  console.log(team);
   const currentUserTeam = keyIndex(team, 1);
   return (
     <div className="CurrentUser">
@@ -27,6 +26,7 @@ const CurrentUser = ({ auth, signOut, team, updateTeam }) => {
                 player={player.value}
                 positionNumber={positionNumber}
                 updateTeam={updateTeam}
+                team={team}
               />
             );
           })}

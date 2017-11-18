@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     signIn() { dispatch(signIn()); },
     signOut() { dispatch(signOut()); },
-    updateTeam(dragSource, dropTarget) { dispatch(updateTeam(dragSource, dropTarget))}
+    updateTeam(initialTeam, dragSource, dropTarget) { dispatch(updateTeam(initialTeam, dragSource, dropTarget))}
   };
 };
 
