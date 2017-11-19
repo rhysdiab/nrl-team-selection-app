@@ -1,48 +1,53 @@
 export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
-  //algorithm which returns an array which replaces the position of
-    //the selected player and pushes every player below the drop source down one
-    //target
+//algorithm which returns a new array with the new position of each player
 
   const playerMovedIndex = initialTeam.indexOf(playerMoved);
   const playerDroppedIndex = initialTeam.indexOf(playerDropped);
 
   const newTeam = [];
 
-
-  //determine whether playing being moved top to bottom or bottom to top
+//determine whether playing being moved top to bottom or bottom to top
   if (playerMovedIndex > playerDroppedIndex) {
-      //algorithm for players being moved from bottom to top
+  //algorithm for players being moved from bottom to top
+    //Get all players above the player dropped
     for (var i = 0; i < playerDroppedIndex; i++) {
       const currentPlayer = initialTeam[i];
       newTeam.push(currentPlayer);
     }
 
-    newTeam.push(playerMoved, playerDropped, initialTeam[playerDroppedIndex + 1]);
+    //push in player moved above player dropped
+    newTeam.push(playerMoved, playerDropped);
 
-    for (var x = playerDroppedIndex + 2; x < initialTeam.length; x++) {
+    //get all players below player dropped
+    for (var x = playerDroppedIndex + 1; x < initialTeam.length; x++) {
       const currentPlayer = initialTeam[x];
 
+      //don't push in playerMoved twice
       if (currentPlayer !== playerMoved) {
         newTeam.push(currentPlayer)
       }
     }
-    console.log(newTeam);
-
+    return newTeam;
   } else {
-    // algorithm for players being moved from top to bottom
-    for (var y = initialTeam.length; y > playerDroppedIndex; y--) {
+  // algorithm for players being moved from top to bottom
+    //Go through all players below the player dropped and unshift them to front of array
+    for (var y = initialTeam.length - 1; y > playerDroppedIndex; y--) {
       const currentPlayer = initialTeam[y];
       newTeam.unshift(currentPlayer);
     }
 
+    //Put the player moved below the player dropped
     newTeam.unshift(playerMoved);
     newTeam.unshift(playerDropped);
 
-    //TODO fix this for loop
-    for (var z = 0; z < playerDroppedIndex; z++) {
+    //go through all players above the plaer dropped
+    for (var z = playerDroppedIndex - 1; z >= 0; z--) {
       const currentPlayer = initialTeam[z];
+      //don't put in the player moved twice
+      if (currentPlayer !== playerMoved) {
+        newTeam.unshift(currentPlayer);
+      }
     }
-
-
+    return newTeam;
   }
 }
