@@ -18,7 +18,7 @@ import { startListeningForUsers } from './actions/users';
   //hard code position Number so react doesn't re-render on every drop event
 
 //Hard TODO
-  //create reverse algorithm for players being dropped
+  //fix for loop for moving players down
   //connect alogithm up to redux state
 
 

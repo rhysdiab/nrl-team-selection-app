@@ -8,10 +8,10 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
 
   const newTeam = [];
 
-  //write condition to determine if player being moved up or down
 
+  //determine whether playing being moved top to bottom or bottom to top
   if (playerMovedIndex > playerDroppedIndex) {
-      //write algorithm for moving players up
+      //algorithm for players being moved from bottom to top
     for (var i = 0; i < playerDroppedIndex; i++) {
       const currentPlayer = initialTeam[i];
       newTeam.push(currentPlayer);
@@ -27,7 +27,29 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
 
     console.log(newTeam);
   } else {
-    //TODO write algorithm for players being dropped
-    return console.log('try again');
+    // algorithm for players being moved from top to bottom
+    for (var y = initialTeam.length - 1; y > playerDroppedIndex; y--) {
+      const currentPlayer = initialTeam[y];
+      newTeam.unshift(currentPlayer);
+    }
+
+    newTeam.unshift(playerMoved);
+    newTeam.unshift(playerDropped);
+
+    //TODO fix this for loos
+    let flexiblePlayerMovedIndex;
+    if (playerMovedIndex - 1 === -1) {
+      flexiblePlayerMovedIndex = 0;
+    } else {
+      flexiblePlayerMovedIndex = playerMovedIndex - 1;
+    }
+
+    for (var z = flexiblePlayerMovedIndex; z >= 0; z--) {
+      const currentPlayer = initialTeam[x];
+      console.log(currentPlayer);
+      newTeam.unshift(currentPlayer);
+    }
+
+    console.log(newTeam);
   }
 }
