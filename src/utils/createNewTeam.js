@@ -17,18 +17,20 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
       newTeam.push(currentPlayer);
     }
 
-    newTeam.push(playerMoved);
-    newTeam.push(playerDropped);
+    newTeam.push(playerMoved, playerDropped, initialTeam[playerDroppedIndex + 1]);
 
     for (var x = playerDroppedIndex + 2; x < initialTeam.length; x++) {
       const currentPlayer = initialTeam[x];
-      newTeam.push(currentPlayer)
-    }
 
+      if (currentPlayer !== playerMoved) {
+        newTeam.push(currentPlayer)
+      }
+    }
     console.log(newTeam);
+
   } else {
     // algorithm for players being moved from top to bottom
-    for (var y = initialTeam.length - 1; y > playerDroppedIndex; y--) {
+    for (var y = initialTeam.length; y > playerDroppedIndex; y--) {
       const currentPlayer = initialTeam[y];
       newTeam.unshift(currentPlayer);
     }
@@ -37,12 +39,10 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
     newTeam.unshift(playerDropped);
 
     //TODO fix this for loop
-    for (var z = playerMovedIndex - 1; z >= 0; z--) {
+    for (var z = 0; z < playerDroppedIndex; z++) {
       const currentPlayer = initialTeam[z];
-      console.log(currentPlayer);
-      newTeam.unshift(currentPlayer);
     }
 
-    console.log(newTeam);
+
   }
 }
