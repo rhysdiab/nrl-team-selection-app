@@ -12,14 +12,11 @@ import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
-//Easy TODO
+//TODO
   //Center all divs and components
   //put each player indide a card
-  //hard code position Number so react doesn't re-render on every drop event
-
-//Hard TODO
-  //fix for loop for moving players down
-  //connect alogithm up to redux state
+  //create css for isDragging and play with styling for drop targets
+  //on drop, save to database and delete current database records
 
 
 injectTapEventPlugin();
