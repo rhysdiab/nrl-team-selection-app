@@ -36,16 +36,9 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
     newTeam.unshift(playerMoved);
     newTeam.unshift(playerDropped);
 
-    //TODO fix this for loos
-    let flexiblePlayerMovedIndex;
-    if (playerMovedIndex - 1 === -1) {
-      flexiblePlayerMovedIndex = 0;
-    } else {
-      flexiblePlayerMovedIndex = playerMovedIndex - 1;
-    }
-
-    for (var z = flexiblePlayerMovedIndex; z >= 0; z--) {
-      const currentPlayer = initialTeam[x];
+    //TODO fix this for loop
+    for (var z = playerMovedIndex - 1; z >= 0; z--) {
+      const currentPlayer = initialTeam[z];
       console.log(currentPlayer);
       newTeam.unshift(currentPlayer);
     }
