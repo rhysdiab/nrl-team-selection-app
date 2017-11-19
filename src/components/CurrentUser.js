@@ -15,8 +15,14 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
         height="50px"
         width="50px"
       />
-      <div>
-        <h5> Choose Your Team </h5>
+      <p className="CurrentUser--email">
+        {auth.email}
+      </p>
+      <p className="CurrentUser--displayName">
+        {auth.displayName}
+      </p>
+      <div className="TeamSelection">
+        <h5 className="TeamSelection__heading"> Choose Your Team </h5>
         <ul>
           {currentUserTeam.map((player, index) => {
             const positionNumber = index + 1;
@@ -32,15 +38,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
           })}
         </ul>
       </div>
-      <div className="CurrentUser--identification">
-        <h3 className="CurrentUser--displayName">
-          {auth.displayName}
-        </h3>
-        <p className="CurrentUser--email">
-          {auth.email}
-        </p>
-        <RaisedButton label="Sign Out" onClick={signOut} />
-      </div>
+      <RaisedButton label="Sign Out" onClick={signOut} />
     </div>
   );
 };
