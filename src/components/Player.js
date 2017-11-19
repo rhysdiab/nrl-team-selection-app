@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types';
 import ItemTypes from './ItemTypes';
-import { createNewTeam } from '../actions/team';
 
 const playerSource = {
   beginDrag(props) {
@@ -19,7 +18,7 @@ const playerSource = {
     const playerMoved = props.player;
     const playerDropped = monitor.getDropResult().player;
 
-    const updateTeam = component.props.updateTeam;
+    const createNewTeam = component.props.createNewTeam;
     const initialTeam = component.props.team;
 
     // updateTeam(initialTeam, playerMoved, playerDropped);

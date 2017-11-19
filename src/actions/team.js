@@ -7,7 +7,6 @@ export const updateTeam = (newTeam) => {
 };
 
 export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
-  console.log('action called');
   //algorithm which returns a new array with the new position of each player
 
   const playerMovedIndex = initialTeam.indexOf(playerMoved);

@@ -4,7 +4,7 @@ import keyIndex from 'react-key-index';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
-const CurrentUser = ({ auth, signOut, team, updateTeam }) => {
+const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
   const currentUserTeam = keyIndex(team, 1);
   return (
     <div className="CurrentUser">
@@ -25,7 +25,7 @@ const CurrentUser = ({ auth, signOut, team, updateTeam }) => {
                 key={player.id}
                 player={player.value}
                 positionNumber={positionNumber}
-                updateTeam={updateTeam}
+                createNewTeam={createNewTeam}
                 team={team}
               />
             );

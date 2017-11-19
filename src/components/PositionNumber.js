@@ -21,17 +21,17 @@ function collect(connect, monitor) {
 class PositionNumber extends Component {
   render() {
     const {
+      createNewTeam,
       connectDropTarget,
       isOver,
       positionNumber,
       player,
       team,
-      updateTeam
     } = this.props;
     return connectDropTarget(
       <div className="PositionNumber">
         <li>
-          {positionNumber}: <Player player={player} updateTeam={updateTeam} team={team} />
+          {positionNumber}: <Player player={player} createNewTeam={createNewTeam} team={team} />
         </li>
       </div>
     );
