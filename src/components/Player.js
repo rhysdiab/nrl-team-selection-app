@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types';
 import ItemTypes from './ItemTypes';
-import { createNewTeam } from '../utils/createNewTeam';
+import { createNewTeam } from '../actions/team';
 
 const playerSource = {
   beginDrag(props) {
