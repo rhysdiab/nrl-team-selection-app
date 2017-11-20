@@ -26,31 +26,42 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
         <ul>
           <div className="container">
             <div className="row">
-              {currentUserTeam.map((player, index) => {
-                const positionNumber = index + 1;
-                return (
-                  <div>
-                    <div class="col-sm">
-                      <PositionNumber
-                        key={player.id}
-                        player={player.value}
-                        positionNumber={positionNumber}
-                        createNewTeam={createNewTeam}
-                        team={team}
-                      />
-                    </div>
-                    <div class="col-sm">
-                      <PositionNumber
-                        key={player.id}
-                        player={player.value}
-                        positionNumber={positionNumber}
-                        createNewTeam={createNewTeam}
-                        team={team}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+              <div class="col-">
+                {currentUserTeam.map((player, index) => {
+                  const positionNumber = index + 1;
+                  while (positionNumber <= 13) {
+                    return (
+                      <div>
+                        <PositionNumber
+                          key={player.id}
+                          player={player.value}
+                          positionNumber={positionNumber}
+                          createNewTeam={createNewTeam}
+                          team={team}
+                        />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+              <div class="col-">
+                {currentUserTeam.map((player, index) => {
+                  const positionNumber = index + 1;
+                  while (positionNumber > 13) {
+                    return (
+                      <div>
+                        <PositionNumber
+                          key={player.id}
+                          player={player.value}
+                          positionNumber={positionNumber}
+                          createNewTeam={createNewTeam}
+                          team={team}
+                        />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
             </div>
           </div>
         </ul>
