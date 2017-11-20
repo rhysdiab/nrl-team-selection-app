@@ -13,8 +13,8 @@ import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
 //TODO
-  //look up how to make drag and drop work on mobile
   //put each player indide a card
+  //work out how to create my own drag layer to see what's being dragged
   //create css for isDragging and play with styling for drop targets
   //on drop, save to database and delete current database records
 
