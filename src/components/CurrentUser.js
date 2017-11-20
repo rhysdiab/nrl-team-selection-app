@@ -24,18 +24,35 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
       <div className="TeamSelection">
         <h5 className="TeamSelection__heading"> Choose Your Team </h5>
         <ul>
-          {currentUserTeam.map((player, index) => {
-            const positionNumber = index + 1;
-            return (
-              <PositionNumber
-                key={player.id}
-                player={player.value}
-                positionNumber={positionNumber}
-                createNewTeam={createNewTeam}
-                team={team}
-              />
-            );
-          })}
+          <div className="container">
+            <div className="row">
+              {currentUserTeam.map((player, index) => {
+                const positionNumber = index + 1;
+                return (
+                  <div>
+                    <div class="col-sm">
+                      <PositionNumber
+                        key={player.id}
+                        player={player.value}
+                        positionNumber={positionNumber}
+                        createNewTeam={createNewTeam}
+                        team={team}
+                      />
+                    </div>
+                    <div class="col-sm">
+                      <PositionNumber
+                        key={player.id}
+                        player={player.value}
+                        positionNumber={positionNumber}
+                        createNewTeam={createNewTeam}
+                        team={team}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </ul>
       </div>
       <RaisedButton label="Sign Out" onClick={signOut} />
