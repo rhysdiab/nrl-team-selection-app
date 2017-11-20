@@ -23,10 +23,10 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
       </p>
       <div className="TeamSelection">
         <h5 className="TeamSelection__heading"> Choose Your Team </h5>
-        <ul>
-          <div className="container">
-            <div className="row">
-              <div class="col-">
+        <div className="container">
+          <div className="row">
+            <div class="col-">
+              <div className="TeamSelection__panel-1 team-panel">
                 {currentUserTeam.map((player, index) => {
                   const positionNumber = index + 1;
                   while (positionNumber <= 13) {
@@ -44,7 +44,9 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
                   }
                 })}
               </div>
-              <div class="col-">
+            </div>
+            <div class="col-">
+              <div className="TeamSelection__panel-1 team-panel">
                 {currentUserTeam.map((player, index) => {
                   const positionNumber = index + 1;
                   while (positionNumber > 13) {
@@ -64,9 +66,11 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
               </div>
             </div>
           </div>
-        </ul>
+        </div>
       </div>
-      <RaisedButton label="Sign Out" onClick={signOut} />
+      <div className="sign-out-button">
+        <RaisedButton label="Sign Out" onClick={signOut} />
+      </div>
     </div>
   );
 };

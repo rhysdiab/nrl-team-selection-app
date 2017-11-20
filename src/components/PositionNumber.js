@@ -30,9 +30,7 @@ class PositionNumber extends Component {
     } = this.props;
     return connectDropTarget(
       <div className="PositionNumber">
-        <li>
           {positionNumber}: <Player player={player} createNewTeam={createNewTeam} team={team} />
-        </li>
       </div>
     );
   }
