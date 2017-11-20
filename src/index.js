@@ -13,8 +13,6 @@ import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
 //TODO
-  //Center all divs and components
-  //create 2 columns for starting line up and reserves
   //look up how to make drag and drop work on mobile
   //put each player indide a card
   //create css for isDragging and play with styling for drop targets
