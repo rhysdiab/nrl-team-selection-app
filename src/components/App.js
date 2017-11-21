@@ -35,8 +35,8 @@ const HTML5toTouch = {
 
 class App extends Component {
   generatePreview(type, item, style) {
-   objectAssign(style, {backgroundColor: item.color, width: '50px', height: '50px'});
-   return <div style={style}>Generated</div>;
+   objectAssign(style, {backgroundColor: item.color, width: 'auto', height: '50px'});
+   return <div style={style}>{item.player}</div>;
  }
 
   render() {
