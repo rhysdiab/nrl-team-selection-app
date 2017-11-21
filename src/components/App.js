@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { DragDropContext } from 'react-dnd';
-import { default as TouchBackend } from 'react-dnd-touch-backend';
+import MultiBackend from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'; // or any other pipeline
 import MultiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.scss';
 import SignIn from './SignIn';
@@ -25,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default DragDropContext(TouchBackend)(App);
+export default DragDropContext(MultiBackend(HTML5toTouch))(App);
