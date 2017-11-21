@@ -1,14 +1,44 @@
 import React, { Component } from 'react';
+import objectAssign from 'object-assign';
 import { DragDropContext } from 'react-dnd';
-import MultiBackend from 'react-dnd-multi-backend';
-import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'; // or any other pipeline
+import MultiBackend, { Preview } from 'react-dnd-multi-backend';
+// import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'; // or any other pipeline
+
+import { createTransition } from 'react-dnd-multi-backend';
+import HTML5Backend from 'react-dnd-html5-backend';
+import TouchBackend from 'react-dnd-touch-backend';
+
 import MultiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.scss';
 import SignIn from './SignIn';
 import Loading from './Loading';
 import CurrentUser from './CurrentUser';
 
+const TouchTransition = createTransition('touchstart', (event) => {
+  return event.touches != null;
+});
+
+const HTML5toTouch = {
+  backends: [
+    {
+      backend: HTML5Backend
+    },
+    {
+      backend: TouchBackend({enableMouseEvents: true}), // Note that you can call your backends with options
+      preview: true,
+      transition: TouchTransition
+    }
+  ]
+};
+
+
+
 class App extends Component {
+  generatePreview(type, item, style) {
+   objectAssign(style, {backgroundColor: item.color, width: '50px', height: '50px'});
+   return <div style={style}>Generated</div>;
+ }
+
   render() {
     const { auth, signIn, signOut, team, createNewTeam } = this.props;
     return (
@@ -20,6 +50,7 @@ class App extends Component {
             {auth.status === 'SIGNED_IN' &&
               <CurrentUser auth={auth} signOut={signOut} createNewTeam={createNewTeam} team={team} />}
           </div>
+          <Preview generator={this.generatePreview} />
         </main>
       </MultiThemeProvider>
     );
