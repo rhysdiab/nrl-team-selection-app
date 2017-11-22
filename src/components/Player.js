@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import PropTypes from 'prop-types';
 import ItemTypes from './ItemTypes';
+import './Player.scss';
 
 const playerSource = {
   beginDrag(props) {
@@ -54,7 +55,7 @@ class Player extends Component {
       updateTeam
     } = this.props;
     return connectDragSource(
-      <span>
+      <span class="player">
         {player}
       </span>
     );

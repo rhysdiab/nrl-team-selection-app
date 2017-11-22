@@ -6,20 +6,14 @@ import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
 const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
+  const style = {
+    backgroundColor: "#B80002"
+  }
+
   const currentUserTeam = keyIndex(team, 1);
   return (
     <div className="CurrentUser">
-    <AppBar />
-      <img
-        className="CurrentUser--photo"
-        src={auth.photoURL}
-        alt={auth.displayName}
-        height="50px"
-        width="50px"
-      />
-      <p className="CurrentUser--email">
-        {auth.email}
-      </p>
+    <AppBar style={style}/>
       <p className="CurrentUser--displayName">
         {auth.displayName}
       </p>
