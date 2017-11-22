@@ -14,9 +14,6 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
   return (
     <div className="CurrentUser">
     <AppBar style={style}/>
-      <p className="CurrentUser--displayName">
-        {auth.displayName}
-      </p>
       <div className="TeamSelection">
         <h5 className="TeamSelection__heading"> {auth.displayName}&apos; s Team </h5>
         <div className="container">

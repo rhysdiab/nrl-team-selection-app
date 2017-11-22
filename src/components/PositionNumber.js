@@ -17,7 +17,6 @@ function collect(connect, monitor) {
   };
 }
 
-
 class PositionNumber extends Component {
   render() {
     const {
@@ -26,14 +25,29 @@ class PositionNumber extends Component {
       isOver,
       positionNumber,
       player,
-      team,
+      team
     } = this.props;
     return connectDropTarget(
       <div className="PositionNumber">
-          {positionNumber}: <Player player={player} createNewTeam={createNewTeam} team={team} />
+        <div className="container">
+          <div className="row">
+            <div className="col-2">
+              {positionNumber}:
+            </div>
+            <div className="col-10">
+              <Player
+                player={player}
+                createNewTeam={createNewTeam}
+                team={team}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default DropTarget(ItemTypes.PLAYER, positionTarget, collect)(PositionNumber);
+export default DropTarget(ItemTypes.PLAYER, positionTarget, collect)(
+  PositionNumber
+);
