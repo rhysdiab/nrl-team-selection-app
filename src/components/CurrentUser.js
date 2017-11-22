@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import AppBar from 'material-ui/AppBar';
 import keyIndex from 'react-key-index';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
@@ -8,6 +9,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
   const currentUserTeam = keyIndex(team, 1);
   return (
     <div className="CurrentUser">
+    <AppBar />
       <img
         className="CurrentUser--photo"
         src={auth.photoURL}
