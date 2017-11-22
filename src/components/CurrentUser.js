@@ -18,7 +18,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
         {auth.displayName}
       </p>
       <div className="TeamSelection">
-        <h5 className="TeamSelection__heading"> Choose Your Team </h5>
+        <h5 className="TeamSelection__heading"> {auth.displayName}&apos; s Team </h5>
         <div className="container">
           <div className="row">
             <div class="col-">
