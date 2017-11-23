@@ -35,13 +35,13 @@ class PositionNumber extends Component {
             <div className="position-wrapper">
               {positionNumber}
             </div>
-            <div className="player-wrapper">
+
               <Player
                 player={player}
                 createNewTeam={createNewTeam}
                 team={team}
               />
-            </div>
+            
           </div>
         </div>
       </div>

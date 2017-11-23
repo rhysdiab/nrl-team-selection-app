@@ -13,6 +13,7 @@ import './App.scss';
 import SignIn from './SignIn';
 import Loading from './Loading';
 import CurrentUser from './CurrentUser';
+import Player from './Player';
 
 const TouchTransition = createTransition('touchstart', (event) => {
   return event.touches != null;
@@ -35,8 +36,10 @@ const HTML5toTouch = {
 
 class App extends Component {
   generatePreview(type, item, style) {
-   objectAssign(style, {backgroundColor: item.color, width: 'auto', height: '50px'});
-   return <div style={style}>{item.player}</div>;
+   objectAssign(style, {backgroundColor: '#B80002', width: '110px', padding: '5px', borderRadius: '10%', color: 'white', fontSize: '12px'});
+   return (
+     <div style={style}>{item.player}</div>
+   );
  }
 
   render() {

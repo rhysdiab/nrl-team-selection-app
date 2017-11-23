@@ -7,7 +7,7 @@ import './Player.scss';
 const playerSource = {
   beginDrag(props) {
     return {
-      player: props.player,
+      player: props.player
     };
   },
 
@@ -55,9 +55,11 @@ class Player extends Component {
       updateTeam
     } = this.props;
     return connectDragSource(
-      <span className="player">
-        {player}
-      </span>
+      <div className="player-wrapper">
+        <span className="player">
+          {player}
+        </span>
+      </div>
     );
   }
 }
