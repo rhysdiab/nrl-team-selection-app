@@ -16,9 +16,9 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
     <AppBar style={style}/>
       <div className="TeamSelection">
         <h5 className="TeamSelection__heading"> {auth.displayName}&apos; s Team </h5>
-        <div className="container">
+
           <div className="row">
-            <div class="col-">
+            <div className="col-6">
               <div className="TeamSelection__panel-1 team-panel">
                 {currentUserTeam.map((player, index) => {
                   const positionNumber = index + 1;
@@ -38,7 +38,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
                 })}
               </div>
             </div>
-            <div class="col-">
+            <div className="col-6">
               <div className="TeamSelection__panel-1 team-panel">
                 {currentUserTeam.map((player, index) => {
                   const positionNumber = index + 1;
@@ -59,7 +59,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
               </div>
             </div>
           </div>
-        </div>
+
       </div>
       <div className="sign-out-button">
         <RaisedButton label="Sign Out" onClick={signOut} />

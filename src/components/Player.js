@@ -55,7 +55,7 @@ class Player extends Component {
       updateTeam
     } = this.props;
     return connectDragSource(
-      <span class="player">
+      <span className="player">
         {player}
       </span>
     );

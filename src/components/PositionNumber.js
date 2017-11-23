@@ -23,18 +23,19 @@ class PositionNumber extends Component {
       createNewTeam,
       connectDropTarget,
       isOver,
-      positionNumber,
       player,
+      positionNumber,
       team
     } = this.props;
+
     return connectDropTarget(
       <div className="PositionNumber">
         <div className="container">
           <div className="row">
-            <div className="col-2">
-              {positionNumber}:
+            <div className="position-wrapper">
+              {positionNumber}
             </div>
-            <div className="col-10">
+            <div className="player-wrapper">
               <Player
                 player={player}
                 createNewTeam={createNewTeam}
