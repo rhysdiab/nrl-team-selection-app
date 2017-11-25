@@ -6,6 +6,19 @@ export const updateTeam = (newTeam) => {
   };
 };
 
+export const createNewTeam2 = (initialTeam, playerMoved, playerDropped) => {
+  //algorithm which returns a new array with the new position of each player
+
+  const playerMovedIndex = initialTeam.indexOf(playerMoved);
+  const playerDroppedIndex = initialTeam.indexOf(playerDropped);
+
+  const newTeam = [];
+
+    initialTeam.slice(playerMovedIndex, playerMovedIndex + 1);
+    initialTeam.splice(playerDropped, 0, playerMoved);
+    return updateTeam(initialTeam);
+};
+
 export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
   //algorithm which returns a new array with the new position of each player
 

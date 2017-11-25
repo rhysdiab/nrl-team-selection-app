@@ -14,6 +14,7 @@ import { startListeningForUsers } from './actions/users';
 
 //TODO
   //create algorithm to replace player on drop rather than move them around
+    //work on createTeam2 to replace rather than move around
   //on drop,
       //save new team to database
       //delete current database records
