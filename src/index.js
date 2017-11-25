@@ -13,7 +13,7 @@ import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
 //TODO
-  //create async action on drop
+  //create algorithm to replace player on drop rather than move them around
   //on drop,
       //save new team to database
       //delete current database records
