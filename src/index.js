@@ -13,10 +13,16 @@ import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
 //TODO
+  //create async action on drop
+  //on drop,
+      //save new team to database
+      //delete current database records
+      //make site render most recent info from database on load
+  //enable facebook authentication
+  //find package for creating screenshot
   //create css for isHovered over to cause small movement
   //make card being dragged dissappear (is isDragging, add css display: none)
-  //on drop, save new team to database and delete current database records
-  
+
 
 injectTapEventPlugin();
 
