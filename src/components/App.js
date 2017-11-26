@@ -44,8 +44,6 @@ class App extends Component {
 
   render() {
     const { auth, signIn, signOut, team, createNewTeam } = this.props;
-
-    console.log(team);
     return (
       <MultiThemeProvider>
         <main className="Application">
@@ -53,7 +51,7 @@ class App extends Component {
             {auth.status === 'ANONYMOUS' && <SignIn signIn={signIn} />}
             {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
             {auth.status === 'SIGNED_IN' &&
-              <CurrentUser auth={auth} signOut={signOut} createNewTeam={createNewTeam} team={team} />}
+              <CurrentUser key={auth.uid} auth={auth} signOut={signOut} createNewTeam={createNewTeam} team={team} />}
           </div>
           <Preview generator={this.generatePreview} />
         </main>

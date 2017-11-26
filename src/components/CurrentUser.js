@@ -42,9 +42,8 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
                   const positionNumber = index + 1;
                   while (positionNumber > 13) {
                     return (
-                      <div>
+                      <div key={player.id}>>
                         <PositionNumber
-                          key={player.id}
                           player={player.value}
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
