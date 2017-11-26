@@ -1,3 +1,6 @@
+import { database } from '../firebase';
+
+const teamsRef = database.ref('teams');
 
 export const updateTeam = (newTeam) => {
   return {

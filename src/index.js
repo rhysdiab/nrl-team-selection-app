@@ -11,10 +11,11 @@ import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
+import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //work out why team isn't updating on new model
-  //on drop,
+  //on drop, model create team action, adding a new team to redux state and pushing it to database
+  //This will activate the startListeningForTeamChanges
       //save new team to database
       //delete current database records
       //make site render most recent info from database on load
@@ -46,3 +47,4 @@ registerServiceWorker();
 
 store.dispatch(startListeningToAuthChanges());
 store.dispatch(startListeningForUsers());
+store.dispatch(startListeningForTeams());
