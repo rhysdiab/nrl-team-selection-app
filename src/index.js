@@ -11,10 +11,15 @@ import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
-import { startListeningForTeams } from './actions/team';
+// import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //on drop, model create team action, adding a new team to redux state and pushing it to database
+  //on drop, model create team action,
+  //1) create createNewTeam action which creates a new team object, and pushes team and uid to database
+  //2) create startListeningForTeamChanges function which listens for additions to the database, takes a snapshot
+  //and calls a function to update the redux state
+  //3) create a function which updates the redux state to display to users
+  //4) replace initialState object with database reference to that persons team to show their team when the page rerenders
   //This will activate the startListeningForTeamChanges
       //save new team to database
       //delete current database records
@@ -47,4 +52,4 @@ registerServiceWorker();
 
 store.dispatch(startListeningToAuthChanges());
 store.dispatch(startListeningForUsers());
-store.dispatch(startListeningForTeams());
+// store.dispatch(startListeningForTeams());
