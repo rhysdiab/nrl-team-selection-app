@@ -14,6 +14,7 @@ import { startListeningForUsers } from './actions/users';
 // import { startListeningForTeams } from './actions/team';
 
 //TODO
+  //figure out what map error is
   //on drop, model create team action,
   //1) create createNewTeam action which creates a new team object, and pushes team and uid to database
   //2) create startListeningForTeamChanges function which listens for additions to the database, takes a snapshot

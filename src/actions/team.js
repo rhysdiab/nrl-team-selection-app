@@ -15,10 +15,16 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
   const playerMovedIndex = initialTeam.indexOf(playerMoved);
   const playerDroppedIndex = initialTeam.indexOf(playerDropped);
 
-    const newTeam = [...initialTeam];
-
-    newTeam.splice(playerMovedIndex, 1, playerDropped);
-    newTeam.splice(playerDroppedIndex, 1, playerMoved);
+    initialTeam.splice(playerMovedIndex, 1, playerDropped);
+    initialTeam.splice(playerDroppedIndex, 1, playerMoved);
     // newTeam.splice(playerDropped, 0, playerMoved);
+
+    const updatedTeam = [...initialTeam];
+    const newTeam = {
+      team: updatedTeam
+    }
+
+
+
     return updateTeam(newTeam);
 };

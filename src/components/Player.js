@@ -21,6 +21,7 @@ const playerSource = {
 
     const createNewTeam = component.props.createNewTeam;
     const initialTeam = component.props.team;
+    console.log(component.props);
 
     // updateTeam(initialTeam, playerMoved, playerDropped);
     createNewTeam(initialTeam, playerMoved, playerDropped);

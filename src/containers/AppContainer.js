@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     signIn() { dispatch(signIn()); },
     signOut() { dispatch(signOut()); },
-    createNewTeam(initialTeam, playerMoved, playerDropped) { dispatch(createNewTeam(initialTeam, playerMoved, playerDropped))}
+    createNewTeam(initialTeam, playerMoved, playerDropped, uid) { dispatch(createNewTeam(initialTeam, playerMoved, playerDropped))}
   };
 };
 
