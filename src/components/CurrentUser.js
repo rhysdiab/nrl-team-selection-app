@@ -9,7 +9,6 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
   const style = {
     backgroundColor: "#B80002"
   }
-  console.log(team);
   const currentUserTeam = keyIndex(team, 1);
   return (
     <div className="CurrentUser">
