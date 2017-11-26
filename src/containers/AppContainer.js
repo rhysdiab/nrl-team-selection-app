@@ -5,6 +5,7 @@ import { createNewTeam } from '../actions/team';
 
 
 const mapStateToProps = ({ auth, team }) => {
+  console.log(team);
   return { auth, team };
 };
 

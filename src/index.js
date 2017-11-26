@@ -13,8 +13,7 @@ import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
 
 //TODO
-  //create algorithm to replace player on drop rather than move them around
-    //work on createTeam2 to replace rather than move around
+  //work out why team isn't updating on new model
   //on drop,
       //save new team to database
       //delete current database records
