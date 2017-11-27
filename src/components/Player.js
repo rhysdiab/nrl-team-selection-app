@@ -51,10 +51,7 @@ class Player extends Component {
     const {
       connectDragSource,
       isDragging,
-      player,
-      team,
-      updateTeam,
-      uid
+      player
     } = this.props;
     return connectDragSource(
       <div className="player-wrapper">

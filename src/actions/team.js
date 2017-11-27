@@ -2,6 +2,15 @@ import { database } from '../firebase';
 
 const teamsRef = database.ref('teams');
 
+export const updateReduxTeam = (key, {team, uid}) => {
+  return {
+    type: 'UPDATE_TEAM',
+    key,
+    team,
+    uid
+  }
+}
+
 export const updateTeam = (newTeam, uid) => {
   return dispatch => {
     const latestTeam = {
@@ -31,7 +40,7 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
 export const startListeningForTeams = () => {
   return (dispatch) => {
     teamsRef.on('child_added', (snapshot) => {
-      console.log(snapshot.val());
+      updateReduxTeam(snapshot.key, snapshot.val());
     });
   }
 }

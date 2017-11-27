@@ -13,7 +13,6 @@ import './App.scss';
 import SignIn from './SignIn';
 import Loading from './Loading';
 import CurrentUser from './CurrentUser';
-import Player from './Player';
 
 const TouchTransition = createTransition('touchstart', (event) => {
   return event.touches != null;
