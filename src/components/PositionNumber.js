@@ -25,7 +25,8 @@ class PositionNumber extends Component {
       isOver,
       player,
       positionNumber,
-      team
+      team,
+      uid
     } = this.props;
 
     return connectDropTarget(
@@ -40,6 +41,7 @@ class PositionNumber extends Component {
                 player={player}
                 createNewTeam={createNewTeam}
                 team={team}
+                uid={uid}
               />
 
           </div>

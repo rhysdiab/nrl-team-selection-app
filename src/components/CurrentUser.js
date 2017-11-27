@@ -6,6 +6,7 @@ import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
 const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
+  const uid = auth.uid;
   const style = {
     backgroundColor: "#B80002"
   }
@@ -29,6 +30,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
                           team={team}
+                          uid={uid}
                         />
                       </div>
                     );
@@ -48,6 +50,7 @@ const CurrentUser = ({ auth, signOut, team, createNewTeam }) => {
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
                           team={team}
+                          uid={uid}
                         />
                       </div>
                     );

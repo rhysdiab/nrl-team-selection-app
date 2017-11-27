@@ -15,15 +15,16 @@ const playerSource = {
     if (!monitor.didDrop()) {
       return;
     }
-
     const playerMoved = props.player;
     const playerDropped = monitor.getDropResult().player;
 
     const createNewTeam = component.props.createNewTeam;
     const initialTeam = component.props.team;
+    const uid = component.props.uid;
+
 
     // updateTeam(initialTeam, playerMoved, playerDropped);
-    createNewTeam(initialTeam, playerMoved, playerDropped);
+    createNewTeam(initialTeam, playerMoved, playerDropped, uid);
   }
 };
 
@@ -52,7 +53,8 @@ class Player extends Component {
       isDragging,
       player,
       team,
-      updateTeam
+      updateTeam,
+      uid
     } = this.props;
     return connectDragSource(
       <div className="player-wrapper">
