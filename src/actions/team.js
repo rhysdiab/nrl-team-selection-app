@@ -7,7 +7,7 @@ export const updateTeam = newTeam => {
     const latestTeam = {
       team: newTeam
     };
-
+    teamsRef.remove();
     teamsRef.push(latestTeam);
   };
 };
@@ -26,3 +26,11 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped) => {
 
   return updateTeam(newTeam);
 };
+
+export const startListeningForTeams = () => {
+  return (dispatch) => {
+    teamsRef.on('child_added', (snapshot) => {
+      console.log(snapshot.val());
+    });
+  }
+}

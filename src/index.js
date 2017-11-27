@@ -11,9 +11,11 @@ import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { startListeningToAuthChanges } from './actions/auth';
 import { startListeningForUsers } from './actions/users';
-// import { startListeningForTeams } from './actions/team';
+import { startListeningForTeams } from './actions/team';
 
 //TODO
+  //pass uid to function so that the persons team can be identified
+
   //figure out what map error is
   //on drop, model create team action,
   //1) create createNewTeam action which creates a new team object, and pushes team and uid to database
@@ -53,4 +55,4 @@ registerServiceWorker();
 
 store.dispatch(startListeningToAuthChanges());
 store.dispatch(startListeningForUsers());
-// store.dispatch(startListeningForTeams());
+store.dispatch(startListeningForTeams());
