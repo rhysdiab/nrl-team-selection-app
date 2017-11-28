@@ -2,6 +2,7 @@ import { database } from '../firebase';
 
 const teamsRef = database.ref('teams');
 
+//update redux state (called after saving to database)
 export const updateReduxTeam = (key, {team, uid}) => {
   return {
     type: 'UPDATE_TEAM',
@@ -11,6 +12,7 @@ export const updateReduxTeam = (key, {team, uid}) => {
   }
 }
 
+//saves mew team ot the database
 export const updateTeam = (newTeam, uid) => {
   return dispatch => {
     const latestTeam = {
@@ -22,6 +24,7 @@ export const updateTeam = (newTeam, uid) => {
   };
 };
 
+//receive players moved from drag and drop input and creates new team
 export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
   //algorithm which returns a new array with the new position of each player
 
@@ -37,10 +40,13 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
   return updateTeam(newTeam, uid);
 };
 
+
+//event listener called when a new team is saved to the database
 export const startListeningForTeams = () => {
   return (dispatch) => {
     teamsRef.on('child_added', (snapshot) => {
-      updateReduxTeam(snapshot.key, snapshot.val());
+      dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
+      console.log(teamsRef);
     });
   }
 }
