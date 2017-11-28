@@ -14,19 +14,9 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //figure out best way to update redux state and clean up code in updating database and state
+  //figure out how to delete the users existing team ref (if it exists) before saving their new team to the database
+  //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
-  //figure out what map error is
-  //on drop, model create team action,
-  //1) create createNewTeam action which creates a new team object, and pushes team and uid to database DONE
-  //2) create startListeningForTeamChanges function which listens for additions to the database, takes a snapshot
-  //and calls a function to update the redux state PARTIALLYDONE
-  //3) create a function which updates the redux state to display to users TODO
-  //4) replace initialState object with database reference to that persons team to show their team when the page rerenders
-  //This will activate the startListeningForTeamChanges
-      //save new team to database
-      //delete current database records
-      //make site render most recent info from database on load
   //enable facebook authentication
   //find package for creating screenshot
   //create css for isHovered over to cause small movement

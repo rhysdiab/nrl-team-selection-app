@@ -3,14 +3,14 @@ import { database } from '../firebase';
 const teamsRef = database.ref('teams');
 
 //update redux state (called after saving to database)
-export const updateReduxTeam = (key, {team, uid}) => {
+export const updateReduxTeam = (key, { team, uid }) => {
   return {
     type: 'UPDATE_TEAM',
     key,
     team,
     uid
-  }
-}
+  };
+};
 
 //saves mew team ot the database
 export const updateTeam = (newTeam, uid) => {
@@ -19,6 +19,15 @@ export const updateTeam = (newTeam, uid) => {
       team: newTeam,
       uid
     };
+
+
+    teamsRef.once('value').then(function(snapshot) {
+      var key = snapshot.key; // "ada"
+      var childKey = snapshot.child('-L-3Uc_KfTfm2DfS0EGU/uid').val();
+      console.log(childKey);
+      if (childKey)
+      console.log(childKey);
+    });
     teamsRef.remove();
     teamsRef.push(latestTeam);
   };
@@ -40,13 +49,11 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
   return updateTeam(newTeam, uid);
 };
 
-
 //event listener called when a new team is saved to the database
 export const startListeningForTeams = () => {
-  return (dispatch) => {
-    teamsRef.on('child_added', (snapshot) => {
+  return dispatch => {
+    teamsRef.on('child_added', snapshot => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
-      console.log(teamsRef);
     });
-  }
-}
+  };
+};
