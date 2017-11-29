@@ -22,10 +22,11 @@ export const updateTeam = (newTeam, uid) => {
     teamsRef.push(latestTeam);
     teamsRef.once('value').then(snapshot => {
       snapshot.forEach(childSnapshot => {
+        console.log(childSnapshot);
         var childKey = childSnapshot.key;
         var childData = childSnapshot.val();
-        console.log(childKey, childData);
-        const oldTeam = database.ref('teams/' + childKey);
+
+        database.ref('teams/' + childKey).remove()
       });
     });
   };

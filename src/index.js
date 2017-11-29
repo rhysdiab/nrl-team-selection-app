@@ -14,7 +14,7 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //figure out how to delete the users existing team ref (if it exists) before saving their new team to the database
+  //figure out how to keep the team which is the last key in the array and delete all the other teams
   //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
   //enable facebook authentication
