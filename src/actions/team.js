@@ -19,17 +19,15 @@ export const updateTeam = (newTeam, uid) => {
       team: newTeam,
       uid
     };
-
-
-    teamsRef.once('value').then(function(snapshot) {
-      var key = snapshot.key; // "ada"
-      var childKey = snapshot.child('-L-3Uc_KfTfm2DfS0EGU/uid').val();
-      console.log(childKey);
-      if (childKey)
-      console.log(childKey);
-    });
-    teamsRef.remove();
     teamsRef.push(latestTeam);
+    teamsRef.once('value').then(snapshot => {
+      snapshot.forEach(childSnapshot => {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        console.log(childKey, childData);
+        const oldTeam = database.ref('teams/' + childKey);
+      });
+    });
   };
 };
 
