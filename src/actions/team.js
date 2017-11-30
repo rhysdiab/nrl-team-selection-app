@@ -19,16 +19,14 @@ export const updateTeam = (newTeam, uid) => {
       team: newTeam,
       uid
     };
-    teamsRef.push(latestTeam);
-    teamsRef.once('value').then(snapshot => {
-      snapshot.forEach(childSnapshot => {
-        console.log(childSnapshot);
-        var childKey = childSnapshot.key;
-        var childData = childSnapshot.val();
+    teamsRef.once('value')
+      .then((snapshot) => {
 
-        database.ref('teams/' + childKey).remove()
+        const currentTeamRef = database.ref('teams/' + Object.keys(snapshot.val())[0]);
+        currentTeamRef.set({
+          ...latestTeam
+        })
       });
-    });
   };
 };
 
