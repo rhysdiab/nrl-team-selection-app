@@ -19,14 +19,23 @@ export const updateTeam = (newTeam, uid) => {
       team: newTeam,
       uid
     };
-    teamsRef.once('value')
-      .then((snapshot) => {
 
-        const currentTeamRef = database.ref('teams/' + Object.keys(snapshot.val())[0]);
+    //Go through the teams node of the database
+    teamsRef.once('value').then(snapshot => {
+
+      //if a team doesn't exist, create one
+      if (!Object.keys(snapshot.val())[0]) {
+        teamsRef.push(latestTeam);
+      //if a team already exists, update it
+      } else {
+        const currentTeamRef = database.ref(
+          'teams/' + Object.keys(snapshot.val())[0]
+        );
         currentTeamRef.set({
           ...latestTeam
-        })
-      });
+        });
+      }
+    });
   };
 };
 
