@@ -24,6 +24,7 @@ export const updateTeam = (newTeam, uid) => {
     teamsRef.once('value').then(snapshot => {
 
       //if a team doesn't exist, create one
+      //TODO only push a new team if it's a new user who hasn't created a team before
       if (!Object.keys(snapshot.val())[0]) {
         teamsRef.push(latestTeam);
       //if a team already exists, update it

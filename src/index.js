@@ -14,7 +14,7 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //figure out how to keep the team which is the last key in the array and delete all the other teams
+  //create a new team if the user doesn't exist
   //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
   //enable facebook authentication
