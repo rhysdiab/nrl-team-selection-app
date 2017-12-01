@@ -22,19 +22,21 @@ export const updateTeam = (newTeam, uid) => {
 
     //Go through the teams node of the database
     teamsRef.once('value').then(snapshot => {
+      for (var prop in snapshot.val()) {
+        const uids = snapshot.child(prop + '/uid').val();
 
-      //if a team doesn't exist, create one
-      //TODO only push a new team if it's a new user who hasn't created a team before
-      if (!Object.keys(snapshot.val())[0]) {
-        teamsRef.push(latestTeam);
-      //if a team already exists, update it
-      } else {
-        const currentTeamRef = database.ref(
-          'teams/' + Object.keys(snapshot.val())[0]
-        );
-        currentTeamRef.set({
-          ...latestTeam
-        });
+        //only push a new team if it's a new user who hasn't created a team before
+        if (uid !== uids) {
+          teamsRef.push(latestTeam);
+        //if a uid and team already exists, update it
+        } else {
+          const currentTeamRef = database.ref(
+            'teams/' + Object.keys(snapshot.val())[0]
+          );
+          currentTeamRef.set({
+            ...latestTeam
+          });
+        }
       }
     });
   };

@@ -14,11 +14,12 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //create a new team if the user doesn't exist
+  //create a new team ONLY if the user doesn't exist
   //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
   //enable facebook authentication
   //find package for creating screenshot
+  //fetch data for initial state players
   //create css for isHovered over to cause small movement
   //make card being dragged dissappear (is isDragging, add css display: none)
 
