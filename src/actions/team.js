@@ -27,15 +27,22 @@ export const updateTeam = (newTeam, uid) => {
 
         //only push a new team if it's a new user who hasn't created a team before
         if (uid !== uids) {
-          teamsRef.push(latestTeam);
+          // teamsRef.push(latestTeam);
+          console.log('new user');
         //if a uid and team already exists, update it
         } else {
-          const currentTeamRef = database.ref(
-            'teams/' + Object.keys(snapshot.val())[0]
+          //TODO go backwards and get the team key for that user id
+          const currentTeamUidRef = database.ref(
+            'teams/' + uid
           );
-          currentTeamRef.set({
-            ...latestTeam
+
+          const currentTeamKeyRef = currentTeamUidRef.parent;
+          currentTeamKeyRef.once('value').then(snapshot => {
+            console.log(snapshot.val());
           });
+          // currentTeamRef.set({
+          //   ...latestTeam
+          // });
         }
       }
     });
@@ -62,7 +69,7 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
 export const startListeningForTeams = () => {
   return dispatch => {
     teamsRef.on('child_added', snapshot => {
-      dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
+      // dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
   };
 };
