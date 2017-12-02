@@ -68,7 +68,7 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
 export const startListeningForTeams = () => {
   return dispatch => {
     teamsRef.on('child_added', snapshot => {
-      // dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
+      dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
   };
 };

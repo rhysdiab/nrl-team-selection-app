@@ -14,7 +14,9 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //create a new team ONLY if the user doesn't exist
+  //set a new team when the team changes if a user already exists
+  //pass that set value to the state
+  //replace initial state with whatever is in the database
   //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
   //enable facebook authentication
