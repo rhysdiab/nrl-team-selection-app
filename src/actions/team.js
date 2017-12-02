@@ -34,7 +34,7 @@ export const updateTeam = (newTeam, uid) => {
           currentTeamKeyRef.once('value').then(snapshot => {});
 
           userAlreadyExists = true;
-        // if a uid and team already exists, update it
+        //TODO if a uid and team already exists, update it
 
           // currentTeamRef.set({
           //   ...latestTeam
