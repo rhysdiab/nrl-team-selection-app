@@ -4,6 +4,7 @@ const teamsRef = database.ref('teams');
 
 //update redux state (called after saving to database)
 export const updateReduxTeam = (key, { team, uid }) => {
+
   return {
     type: 'UPDATE_TEAM',
     key,
@@ -56,7 +57,6 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
 
   newTeam.splice(playerMovedIndex, 1, playerDropped);
   newTeam.splice(playerDroppedIndex, 1, playerMoved);
-  // newTeam.splice(playerDropped, 0, playerMoved);
 
   return updateTeam(newTeam, uid);
 };
