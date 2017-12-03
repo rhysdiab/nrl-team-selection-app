@@ -27,22 +27,19 @@ export const updateTeam = (newTeam, uid) => {
         const uidInDatabase = snapshot.child(prop + '/uid').val();
         //only push a new team if it's a new user who hasn't created a team before
         if (uid === uidInDatabase) {
-          //TODO go backwards and get the team key for that user id
-          const currentTeamUidRef = database.ref('teams/' + uid);
-
-          const currentTeamKeyRef = currentTeamUidRef.parent;
-          currentTeamKeyRef.once('value').then(snapshot => {});
-
           userAlreadyExists = true;
-        //TODO if a uid and team already exists, update it
-
-          // currentTeamRef.set({
-          //   ...latestTeam
-          // });
         }
       }
       if (!userAlreadyExists) {
         teamsRef.push(latestTeam);
+      } else {
+        teamsRef.orderByChild(uid).once('value').then(snapshot => {
+          const currentTeamKey = Object.keys(snapshot.val())[0];
+          const currentTeamRef = database.ref('teams/' + currentTeamKey);
+          currentTeamRef.set({
+            ...latestTeam
+          });
+        });
       }
     });
   };
