@@ -67,5 +67,8 @@ export const startListeningForTeams = () => {
     teamsRef.on('child_added', snapshot => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
+    teamsRef.on('child_changed', snapshot => {
+      dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
+    });
   };
 };
