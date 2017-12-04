@@ -14,8 +14,7 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //in startListeningForTeams, dispatch the updateRedux function whenever there is a change to the database (not just a child added)
-  //make sure redux state update works (check when action being called and check reducer)
+  //examine when to use cloud functions and when to use event listeners on nodes of the database data
   //replace initial state with whatever is in the database
   //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
