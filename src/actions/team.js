@@ -1,4 +1,5 @@
 import { database } from '../firebase';
+import { updatedTeamInDatabase } from '../initial-state';
 
 const teamsRef = database.ref('teams');
 
@@ -68,6 +69,8 @@ export const startListeningForTeams = () => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
     teamsRef.on('child_changed', snapshot => {
+      const currentTeamInDatabase = database.ref('teams/' + snapshot.key + '/team');
+      updatedTeamInDatabase(currentTeamInDatabase);
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
   };

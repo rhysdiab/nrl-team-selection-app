@@ -1,3 +1,29 @@
+import { database } from './firebase';
+
+let mostRecentTeam = [
+      'Matt Dufty',
+      'Jason Nightingale',
+      'Tim Lafai',
+      'Euan Aitkin',
+      'Nene Mcdonald',
+      'Gareth Widdop',
+      'Ben Hunt',
+      'Paul Vaughen',
+      'Cameron Mcinnes',
+      'James Graham',
+      'Tyson Frizell',
+      'Joel Thompson',
+      'Jack Debelin',
+      'Jai Field',
+      'Tariq Sims',
+      'Leeson Ah Mau',
+      'Bryan Lawrie'
+    ];
+
+export const updatedTeamInDatabase = (currentTeamInDatabase) => {
+  mostRecentTeam = currentTeamInDatabase;
+}
+
 const initialState = {
   auth: {
     status: 'ANONYMOUS',
@@ -6,25 +32,7 @@ const initialState = {
     photoURL: null,
     uid: null
   },
-  team: [
-        'Matt Dufty',
-        'Jason Nightingale',
-        'Tim Lafai',
-        'Euan Aitkin',
-        'Nene Mcdonald',
-        'Gareth Widdop',
-        'Ben Hunt',
-        'Paul Vaughen',
-        'Cameron Mcinnes',
-        'James Graham',
-        'Tyson Frizell',
-        'Joel Thompson',
-        'Jack Debelin',
-        'Jai Field',
-        'Tariq Sims',
-        'Leeson Ah Mau',
-        'Bryan Lawrie'
-      ],
+  team: mostRecentTeam,
   users: {
     'firstUser': {
       displayName: 'Bill Murray',
