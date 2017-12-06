@@ -15,6 +15,7 @@ import { startListeningForTeams } from './actions/team';
 
 //TODO
   //pass key to redux
+    //reformat data structure in teams reducer and destructure team higher up the component heirarchy
   //in currentUser component make componentDidMount updateTheState to what is already in the database
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
   //enable facebook authentication
