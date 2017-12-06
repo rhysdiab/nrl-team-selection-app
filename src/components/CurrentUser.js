@@ -4,6 +4,10 @@ import AppBar from 'material-ui/AppBar';
 import keyIndex from 'react-key-index';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
+import { database } from '../firebase';
+
+// const teamsRef = database.ref('teams');
+// const currentTeamInDatabase = database.ref('teams/' + snapshot.key + '/team');
 
 class CurrentUser extends React.Component {
   constructor(props) {
