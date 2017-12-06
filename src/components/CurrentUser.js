@@ -16,6 +16,14 @@ class CurrentUser extends React.Component {
     this.state = {team: currentUserTeam};
   }
 
+  componentWillReceiveProps(nextprops) {
+    const newTeam = nextprops.team;
+    const newCurrentUserTeam = keyIndex(newTeam, 1);
+    this.setState({
+      team: newCurrentUserTeam
+    })
+  }
+
   componentDidMount() {
 
   }
@@ -41,7 +49,7 @@ class CurrentUser extends React.Component {
             <div className="row">
               <div className="col-6">
                 <div className="TeamSelection__panel-1 team-panel">
-                  {currentUserTeam.map((player, index) => {
+                  {this.state.team.map((player, index) => {
                     const positionNumber = index + 1;
                     while (positionNumber <= 13) {
                       return (
@@ -61,7 +69,7 @@ class CurrentUser extends React.Component {
               </div>
               <div className="col-6">
                 <div className="TeamSelection__panel-1 team-panel">
-                  {currentUserTeam.map((player, index) => {
+                  {this.state.team.map((player, index) => {
                     const positionNumber = index + 1;
                     while (positionNumber > 13) {
                       return (
