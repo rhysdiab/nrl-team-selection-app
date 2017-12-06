@@ -14,10 +14,9 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //replace initial state with whatever is in the database using componentDidMount
+  //pass key to redux
+  //in currentUser component make componentDidMount updateTheState to what is already in the database
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
-  //replace initialState object with database reference to that persons team to show their team when the page rerenders
-
   //enable facebook authentication
   //find package for creating screenshot
   //fetch data for initial state players

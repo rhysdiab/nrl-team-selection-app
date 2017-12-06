@@ -50,7 +50,6 @@ export const updateTeam = (newTeam, uid) => {
 //receive players moved from drag and drop input and creates new team
 export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
   //algorithm which returns a new array with the new position of each player
-
   const playerMovedIndex = initialTeam.indexOf(playerMoved);
   const playerDroppedIndex = initialTeam.indexOf(playerDropped);
 

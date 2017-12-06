@@ -6,7 +6,7 @@ import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 import { database } from '../firebase';
 
-// const teamsRef = database.ref('teams');
+const teamsRef = database.ref('teams');
 // const currentTeamInDatabase = database.ref('teams/' + snapshot.key + '/team');
 
 class CurrentUser extends React.Component {
@@ -29,7 +29,13 @@ class CurrentUser extends React.Component {
   }
 
   componentDidMount() {
-
+    const uid = this.props.auth.uid;
+    // const currentTeamInDatabase = database.ref('teams/' + key + '/team');
+    if (uid) {
+      // this.setState({
+      //   team: database.ref('team')
+      // })
+    }
   }
 
   render() {
