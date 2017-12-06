@@ -14,8 +14,7 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //Research best way to grab the most recent data from the database if it exists
-  //replace initial state with whatever is in the database
+  //replace initial state with whatever is in the database using componentDidMount
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
   //replace initialState object with database reference to that persons team to show their team when the page rerenders
 
