@@ -14,6 +14,7 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
+  //read correct team from the database
   //find way to get key only when it is update by redux
   //in currentUser component make componentDidMount updateTheState to what is already in the database
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
