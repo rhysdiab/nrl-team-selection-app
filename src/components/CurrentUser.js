@@ -6,18 +6,17 @@ import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 import { database } from '../firebase';
 
-// const currentTeamInDatabase = database.ref('teams/' + snapshot.key + '/team');
-
 class CurrentUser extends React.Component {
   constructor(props) {
     super(props);
-
     const {
       teams
     } = this.props;
     const team = teams.team;
     const currentUserTeam = keyIndex(team, 1);
-    this.state = {team: currentUserTeam};
+    this.state = {
+      team: currentUserTeam
+    };
   }
 
   componentWillReceiveProps(nextprops) {
@@ -30,16 +29,16 @@ class CurrentUser extends React.Component {
 
   componentDidMount() {
     const userKey = this.props.teams.key;
-    console.log(this.props.teams.key);
+    console.log(userKey);
     const teamsRef = database.ref('teams');
 
-    teamsRef.once('value').then(snapshot => {
-      
-    });
+
     if (userKey) {
-      // this.setState({
-      //   team: database.ref('team')
-      // })
+      teamsRef.once('value').then(snapshot => {
+        // this.setState({
+        //   team: database.ref('team')
+        // })
+      });
     }
   }
 
