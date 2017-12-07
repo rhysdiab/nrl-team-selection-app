@@ -4,8 +4,8 @@ import { signIn, signOut } from '../actions/auth';
 import { createNewTeam } from '../actions/team';
 
 
-const mapStateToProps = ({ auth, team }) => {
-  return { auth, team };
+const mapStateToProps = ({ auth, teams }) => {
+  return { auth, teams };
 };
 
 const mapDispatchToProps = (dispatch) => {

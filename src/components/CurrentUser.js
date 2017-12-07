@@ -14,14 +14,16 @@ class CurrentUser extends React.Component {
     super(props);
 
     const {
-      team
+      teams
     } = this.props;
+    const team = teams.team;
+    console.log(this.props);
     const currentUserTeam = keyIndex(team, 1);
     this.state = {team: currentUserTeam};
   }
 
   componentWillReceiveProps(nextprops) {
-    const newTeam = nextprops.team;
+    const newTeam = nextprops.teams.team;
     const newCurrentUserTeam = keyIndex(newTeam, 1);
     this.setState({
       team: newCurrentUserTeam
@@ -43,8 +45,9 @@ class CurrentUser extends React.Component {
       auth,
       createNewTeam,
       signOut,
-      team
+      teams
     } = this.props;
+    const team = teams.team;
     const currentUserTeam = keyIndex(team, 1);
     const uid = auth.uid;
     const style = {
