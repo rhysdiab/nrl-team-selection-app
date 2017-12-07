@@ -6,7 +6,6 @@ import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 import { database } from '../firebase';
 
-const teamsRef = database.ref('teams');
 // const currentTeamInDatabase = database.ref('teams/' + snapshot.key + '/team');
 
 class CurrentUser extends React.Component {
@@ -17,7 +16,6 @@ class CurrentUser extends React.Component {
       teams
     } = this.props;
     const team = teams.team;
-    console.log(this.props);
     const currentUserTeam = keyIndex(team, 1);
     this.state = {team: currentUserTeam};
   }
@@ -31,9 +29,14 @@ class CurrentUser extends React.Component {
   }
 
   componentDidMount() {
-    const uid = this.props.auth.uid;
-    // const currentTeamInDatabase = database.ref('teams/' + key + '/team');
-    if (uid) {
+    const userKey = this.props.teams.key;
+    console.log(this.props.teams.key);
+    const teamsRef = database.ref('teams');
+
+    teamsRef.once('value').then(snapshot => {
+      
+    });
+    if (userKey) {
       // this.setState({
       //   team: database.ref('team')
       // })
@@ -58,7 +61,6 @@ class CurrentUser extends React.Component {
       <AppBar style={style}/>
         <div className="TeamSelection">
           <h5 className="TeamSelection__heading"> {auth.displayName}&apos; s Team </h5>
-
             <div className="row">
               <div className="col-6">
                 <div className="TeamSelection__panel-1 team-panel">

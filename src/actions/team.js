@@ -14,7 +14,7 @@ export const updateReduxTeam = (key, { team, uid }) => {
   };
 };
 
-//saves mew team ot the database
+//saves new team ot the database
 export const updateTeam = (newTeam, uid) => {
   return dispatch => {
     const latestTeam = {

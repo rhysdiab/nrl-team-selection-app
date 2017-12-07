@@ -25,7 +25,8 @@ const initialState = {
       'Tariq Sims',
       'Leeson Ah Mau',
       'Bryan Lawrie'
-    ]
+    ],
+    key: 'temp'
   },
   users: {
     firstUser: {
