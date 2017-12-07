@@ -19,27 +19,29 @@ class CurrentUser extends React.Component {
     };
   }
 
+  //shouldComponentUpdate(nextProps) {
+    //return (keyIndex(nextProps.teams.team, 1) !== this.state.team);
+  //}
+
   componentWillReceiveProps(nextprops) {
     const newTeam = nextprops.teams.team;
     const newCurrentUserTeam = keyIndex(newTeam, 1);
-    this.setState({
-      team: newCurrentUserTeam
-    })
+    this.setState({ team: newCurrentUserTeam });
   }
 
   componentDidMount() {
-    const userKey = this.props.teams.key;
-    console.log(userKey);
-    const teamsRef = database.ref('teams');
-
-
-    if (userKey) {
-      teamsRef.once('value').then(snapshot => {
-        // this.setState({
-        //   team: database.ref('team')
-        // })
-      });
-    }
+    // const userKey = this.props.teams.key;
+    // console.log(userKey);
+    // const teamsRef = database.ref('teams');
+    //
+    //
+    // if (userKey) {
+    //   teamsRef.once('value').then(snapshot => {
+    //     // this.setState({
+    //     //   team: database.ref('team')
+    //     // })
+    //   });
+    // }
   }
 
   render() {
@@ -55,6 +57,7 @@ class CurrentUser extends React.Component {
     const style = {
       backgroundColor: "#B80002"
     }
+    console.log(team);
     return (
       <div className="CurrentUser">
       <AppBar style={style}/>
