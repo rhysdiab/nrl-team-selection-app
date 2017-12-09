@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import keyIndex from 'react-key-index';
 import './CurrentUser.scss';
@@ -19,6 +20,13 @@ class CurrentUser extends React.Component {
     };
   }
 
+  static propTypes = {
+    auth: PropTypes.object.isRequired,
+    signOut: PropTypes.func.isRequired,
+    teams: PropTypes.object.isRequired,
+    createNewTeam: PropTypes.func.isRequired
+  };
+
   shouldComponentUpdate(nextProps) {
     return (keyIndex(nextProps.teams.team, 1) !== this.state.team);
   }
@@ -37,7 +45,6 @@ class CurrentUser extends React.Component {
       teams
     } = this.props;
     const team = teams.team;
-    const currentUserTeam = keyIndex(team, 1);
     const uid = auth.uid;
     const style = {
       backgroundColor: "#B80002"

@@ -41,8 +41,6 @@ function collect(connect, monitor) {
 class Player extends Component {
   static propTypes = {
     player: PropTypes.string.isRequired,
-
-    // Injected by React DnD:
     connectDragSource: PropTypes.func.isRequired,
     isDragging: PropTypes.bool.isRequired
   };

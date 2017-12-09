@@ -25,14 +25,16 @@ export const updateTeam = (newTeam, uid) => {
     teamsRef.once('value').then(snapshot => {
       for (var prop in snapshot.val()) {
         const uidInDatabase = snapshot.child(prop + '/uid').val();
-        //only push a new team if it's a new user who hasn't created a team before
+        //check if the user already has a team
         if (uid === uidInDatabase) {
           userAlreadyExists = true;
         }
       }
+      //if the user doesn't have a team, create a team for them
       if (!userAlreadyExists) {
         teamsRef.push(latestTeam);
       } else {
+      //if the user has a team, find their team key and update their team
         teamsRef.once('value').then(snapshot => {
           for (var prop in snapshot.val()) {
             if (snapshot.val()[prop].uid === uid) {
@@ -72,6 +74,5 @@ export const startListeningForTeams = () => {
     teamsRef.on('child_changed', snapshot => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
-    //make redux state update on sign in
   };
 };

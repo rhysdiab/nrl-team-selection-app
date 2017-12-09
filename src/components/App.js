@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import objectAssign from 'object-assign';
 import { DragDropContext } from 'react-dnd';
 import MultiBackend, { Preview } from 'react-dnd-multi-backend';
-// import HTML5toTouch from 'react-dnd-multi-backend/lib/HTML5toTouch'; // or any other pipeline
-
 import { createTransition } from 'react-dnd-multi-backend';
 import HTML5Backend from 'react-dnd-html5-backend';
 import TouchBackend from 'react-dnd-touch-backend';
@@ -34,6 +33,14 @@ const HTML5toTouch = {
 
 
 class App extends Component {
+  static propTypes = {
+    auth: PropTypes.object.isRequired,
+    signIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired,
+    teams: PropTypes.object.isRequired,
+    createNewTeam: PropTypes.func.isRequired
+  };
+
   generatePreview(type, item, style) {
    objectAssign(style, {backgroundColor: '#B80002', width: '110px', padding: '5px', borderRadius: '10%', color: 'white', fontSize: '12px'});
    return (
@@ -43,6 +50,7 @@ class App extends Component {
 
   render() {
     const { auth, signIn, signOut, teams, createNewTeam } = this.props;
+    console.log(this.props);
     return (
       <MultiThemeProvider>
         <main className="Application">

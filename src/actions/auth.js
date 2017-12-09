@@ -32,6 +32,7 @@ const signedOut = () => {
   };
 };
 
+//update redux teams state on sign in
 const updateUserTeam = user => {
   return dispatch => {
     //update team state on sign in
@@ -48,6 +49,7 @@ const updateUserTeam = user => {
         }
       }
     });
+    //sign the user in
     dispatch(signedIn(user));
   };
 };

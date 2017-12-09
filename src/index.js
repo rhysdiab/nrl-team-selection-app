@@ -26,6 +26,9 @@ import { startListeningForTeams } from './actions/team';
   //create css for isHovered over to cause small movement
   //make card being dragged dissappear (is isDragging, add css display: none)
 
+  //cleanup
+    //configure eslint to work
+
 
 injectTapEventPlugin();
 
