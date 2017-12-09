@@ -33,12 +33,16 @@ export const updateTeam = (newTeam, uid) => {
       if (!userAlreadyExists) {
         teamsRef.push(latestTeam);
       } else {
-        teamsRef.orderByChild(uid).once('value').then(snapshot => {
-          const currentTeamKey = Object.keys(snapshot.val())[0];
-          const currentTeamRef = database.ref('teams/' + currentTeamKey);
-          currentTeamRef.set({
-            ...latestTeam
-          });
+        teamsRef.once('value').then(snapshot => {
+          for (var prop in snapshot.val()) {
+            if (snapshot.val()[prop].uid === uid) {
+              const currentTeamKey = prop;
+              const currentTeamRef = database.ref('teams/' + currentTeamKey);
+              currentTeamRef.set({
+                ...latestTeam
+              });
+            }
+          }
         });
       }
     });
@@ -68,5 +72,6 @@ export const startListeningForTeams = () => {
     teamsRef.on('child_changed', snapshot => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
+    //make redux state update on sign in
   };
 };
