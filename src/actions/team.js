@@ -1,11 +1,9 @@
 import { database } from '../firebase';
-import { updatedTeamInDatabase } from '../initial-state';
 
 const teamsRef = database.ref('teams');
 
 //update redux state (called after saving to database)
 export const updateReduxTeam = (key, { team, uid }) => {
-
   return {
     type: 'UPDATE_TEAM',
     key,
@@ -64,7 +62,7 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
 //event listener called when a new team is saved to the database
 export const startListeningForTeams = () => {
   return dispatch => {
-    teamsRef.on('child_added', snapshot => {
+    teamsRef.once('child_added', snapshot => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });
     teamsRef.on('child_changed', snapshot => {
