@@ -18,15 +18,16 @@ function collect(connect, monitor) {
 }
 
 class PositionNumber extends Component {
-  static propTypes = {
-    createNewTeam,
-    connectDropTarget,
-    isOver,
-    player,
-    positionNumber,
-    team,
-    uid
-  };
+  ///add proptypes
+  // static propTypes = {
+  //   createNewTeam,
+  //   connectDropTarget,
+  //   isOver,
+  //   player,
+  //   positionNumber,
+  //   team,
+  //   uid
+  // };
   render() {
     const {
       createNewTeam,
