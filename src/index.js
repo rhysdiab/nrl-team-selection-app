@@ -14,9 +14,11 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //read correct team from the database
-  //find way to get key only when it is update by redux
-  //in currentUser component make componentDidMount updateTheState to what is already in the database
+  //clean up code and write pseudocode
+  //make sure component only re-renders when there's new a team, not just receiving new props
+  //fix css alignment on desktop
+  //add full squad of players
+
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
   //enable facebook authentication
   //find package for creating screenshot
