@@ -39,7 +39,6 @@ class PositionNumber extends Component {
       team,
       uid
     } = this.props;
-    console.log(this.props);
     return connectDropTarget(
       <div className="PositionNumber">
         <div className="container">
