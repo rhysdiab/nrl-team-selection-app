@@ -18,16 +18,17 @@ function collect(connect, monitor) {
 }
 
 class PositionNumber extends Component {
-  ///add proptypes
+  // ///add proptypes
   // static propTypes = {
-  //   createNewTeam,
-  //   connectDropTarget,
+  //   createNewTeam: PropTypes.func.isRequired,
+  //   connectDropTarget:
   //   isOver,
   //   player,
   //   positionNumber,
   //   team,
   //   uid
   // };
+
   render() {
     const {
       createNewTeam,
@@ -38,7 +39,7 @@ class PositionNumber extends Component {
       team,
       uid
     } = this.props;
-
+    console.log(this.props);
     return connectDropTarget(
       <div className="PositionNumber">
         <div className="container">

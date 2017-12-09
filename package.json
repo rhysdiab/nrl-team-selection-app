@@ -57,9 +57,6 @@
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "lint": "yarn run lint:eslint && yarn run lint:stylelint",
-    "lint:eslint": "$(yarn bin)/eslint --ext .js,.jsx app/** --config .eslintrc",
-    "lint:stylelint": "$(yarn bin)/stylelint '**/*.scss' .stylelintrc",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",

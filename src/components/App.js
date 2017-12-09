@@ -50,7 +50,6 @@ class App extends Component {
 
   render() {
     const { auth, signIn, signOut, teams, createNewTeam } = this.props;
-    console.log(this.props);
     return (
       <MultiThemeProvider>
         <main className="Application">
