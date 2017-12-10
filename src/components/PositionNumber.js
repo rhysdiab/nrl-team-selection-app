@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './PositionNumber.scss';
 import Player from './Player';
 import { DropTarget } from 'react-dnd';
@@ -18,16 +19,15 @@ function collect(connect, monitor) {
 }
 
 class PositionNumber extends Component {
-  // ///add proptypes
-  // static propTypes = {
-  //   createNewTeam: PropTypes.func.isRequired,
-  //   connectDropTarget:
-  //   isOver,
-  //   player,
-  //   positionNumber,
-  //   team,
-  //   uid
-  // };
+  static propTypes = {
+    createNewTeam: PropTypes.func.isRequired,
+    connectDropTarget: PropTypes.func.isRequired,
+    isOver: PropTypes.func.isRequired,
+    player: PropTypes.string.isRequired,
+    positionNumber: PropTypes.number.isRequired,
+    team: PropTypes.array.isRequired,
+    uid: PropTypes.string.isRequired
+  };
 
   render() {
     const {
@@ -53,7 +53,6 @@ class PositionNumber extends Component {
                 team={team}
                 uid={uid}
               />
-
           </div>
         </div>
       </div>

@@ -14,9 +14,8 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //clean up code and write pseudocode
-  //make sure component only re-renders when there's new a team, not just receiving new props
   //fix css alignment on desktop
+  //add hover feature
   //add full squad of players
 
   //examine when to use cloud functions and when to use event listeners on nodes of the database data

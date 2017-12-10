@@ -43,7 +43,6 @@ const updateUserTeam = user => {
           const currentTeamKey = prop;
           const currentTeamRef = database.ref('teams/' + currentTeamKey);
           currentTeamRef.once('value').then(snapshot => {
-            console.log('updating state');
             dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
           });
         }
