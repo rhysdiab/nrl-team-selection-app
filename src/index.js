@@ -15,7 +15,6 @@ import { startListeningForTeams } from './actions/team';
 
 //TODO
   //add hover feature
-  //add drag feature (transition)
   //add full squad of players
 
   //examine when to use cloud functions and when to use event listeners on nodes of the database data

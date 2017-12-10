@@ -49,11 +49,13 @@ class Player extends Component {
     const {
       connectDragSource,
       isDragging,
+      isOver,
       player
     } = this.props;
+
     return connectDragSource(
       <div className="player-wrapper">
-        <span className="player">
+        <span className={isDragging ? "player hidden" : "player"}>
           {player}
         </span>
       </div>

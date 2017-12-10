@@ -42,7 +42,7 @@ class App extends Component {
   };
 
   generatePreview(type, item, style) {
-   objectAssign(style, {backgroundColor: '#B80002', width: '110px', padding: '5px', borderRadius: '10%', color: 'white', fontSize: '12px'});
+   objectAssign(style, {backgroundColor: 'blue', width: '130px', padding: '5px', borderRadius: '10%', color: 'white', fontSize: '12px'});
    return (
      <div style={style}>{item.player}</div>
    );

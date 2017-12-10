@@ -52,6 +52,7 @@ class PositionNumber extends Component {
                 createNewTeam={createNewTeam}
                 team={team}
                 uid={uid}
+                isOver={isOver}
               />
           </div>
         </div>
