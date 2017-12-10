@@ -14,8 +14,8 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //fix css alignment on desktop
   //add hover feature
+  //add drag feature (transition)
   //add full squad of players
 
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
