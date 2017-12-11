@@ -22,7 +22,7 @@ class PositionNumber extends Component {
   static propTypes = {
     createNewTeam: PropTypes.func.isRequired,
     connectDropTarget: PropTypes.func.isRequired,
-    isOver: PropTypes.func.isRequired,
+    isOver: PropTypes.bool.isRequired,
     player: PropTypes.string.isRequired,
     positionNumber: PropTypes.number.isRequired,
     team: PropTypes.array.isRequired,
