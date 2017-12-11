@@ -14,7 +14,8 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //Make sign in page nice with background picture
+  //work out how to change the opacity of the background picture
+  //work out how to position the sign in button relative to the bottom of the view height
   //add facebook authentication option
   //add full squad of players
 
