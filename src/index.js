@@ -14,7 +14,8 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
-  //add hover feature
+  //Make sign in page nice with background picture
+  //add facebook authentication option
   //add full squad of players
 
   //examine when to use cloud functions and when to use event listeners on nodes of the database data

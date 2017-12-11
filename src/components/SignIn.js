@@ -4,7 +4,7 @@ import './SignIn.scss';
 
 const SignIn = ({ signIn }) => {
   return (
-    <div className="hello">
+    <div className="SignIn">
       <div className="container">
         <div className="row">
           <div className="col-12">

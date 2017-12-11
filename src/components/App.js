@@ -9,7 +9,7 @@ import TouchBackend from 'react-dnd-touch-backend';
 
 import MultiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.scss';
-import SignIn from './SignIn';
+import SignInPage from './SignInPage';
 import Loading from './Loading';
 import CurrentUser from './CurrentUser';
 
@@ -54,7 +54,9 @@ class App extends Component {
       <MultiThemeProvider>
         <main className="Application">
           <div className="Application--sidebar">
-            {auth.status === 'ANONYMOUS' && <SignIn signIn={signIn} />}
+            {auth.status === 'ANONYMOUS' &&
+            <SignInPage signIn={signIn} />
+            }
             {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
             {auth.status === 'SIGNED_IN' &&
               <CurrentUser key={auth.uid} auth={auth} signOut={signOut} createNewTeam={createNewTeam} teams={teams} />}
