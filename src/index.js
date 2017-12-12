@@ -14,9 +14,11 @@ import { startListeningForUsers } from './actions/users';
 import { startListeningForTeams } from './actions/team';
 
 //TODO
+
+  //make facebook authentication work
+  //add full squad of players
   //work out how to change the opacity of the background picture
   //add facebook authentication option
-  //add full squad of players
 
   //examine when to use cloud functions and when to use event listeners on nodes of the database data
   //enable facebook authentication
