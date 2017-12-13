@@ -16,7 +16,6 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //make facebook authentication work
-    //figure out how to configure domain correctly
     //ensure signInWithFacebook action firebase
     //ensure startListeningToAuthChanges fires
     //ensure correct information is brain parsed from the response object
