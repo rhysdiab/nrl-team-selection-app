@@ -9,7 +9,7 @@ const SignIn = ({ signIn }) => {
         <div className="row">
           <div className="col-12">
             <div className="my-scss-test">
-              <RaisedButton label="Sign In" onClick={signIn} />
+              <RaisedButton label="Sign In With Email" onClick={signIn} />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { auth, database, googleAuthProvider } from '../firebase';
+import { auth, database, facebookAuthProvider, googleAuthProvider } from '../firebase';
 import pick from 'lodash/pick';
 import { updateReduxTeam } from './team';
 
@@ -6,6 +6,13 @@ export const signIn = () => {
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
     auth.signInWithPopup(googleAuthProvider);
+  };
+};
+
+export const signInWithFacebook = () => {
+  return dispatch => {
+    dispatch({ type: 'ATTEMPTING_LOGIN' });
+    auth.signInWithPopup(facebookAuthProvider);
   };
 };
 

@@ -7,9 +7,6 @@ const SignInPage = ({ signIn }) => {
   return (
     <div className="SignInPage">
       <div className="SignInPage__wrapper">
-        <div className="SignInPage__wrapper__SignIn">
-          <SignIn signIn={signIn} />
-        </div>
         <div className="SignInPage__wrapper__FacebookSignIn">
           <FacebookLogin
             appId="1088597931155576"
@@ -18,6 +15,9 @@ const SignInPage = ({ signIn }) => {
             onClick={''}
             callback={'responseFacebook'}
           />
+        </div>
+        <div className="SignInPage__wrapper__SignIn">
+          <SignIn signIn={signIn} />
         </div>
       </div>
     </div>
