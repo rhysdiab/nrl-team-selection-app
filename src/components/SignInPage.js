@@ -3,16 +3,16 @@ import FacebookLogin from 'react-facebook-login';
 import './SignInPage.scss';
 import SignIn from './SignIn';
 
-const SignInPage = ({ signIn }) => {
+const SignInPage = ({ signIn, signInWithFacebook }) => {
   return (
     <div className="SignInPage">
       <div className="SignInPage__wrapper">
         <div className="SignInPage__wrapper__FacebookSignIn">
           <FacebookLogin
-            appId="1088597931155576"
+            appId="516067968764277"
             autoLoad={true}
             fields="name,email,picture"
-            onClick={''}
+            onClick={signInWithFacebook}
             callback={'responseFacebook'}
           />
         </div>

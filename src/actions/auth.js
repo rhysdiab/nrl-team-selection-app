@@ -10,6 +10,7 @@ export const signIn = () => {
 };
 
 export const signInWithFacebook = () => {
+  console.log('signing in with facebook!!!');
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
     auth.signInWithPopup(facebookAuthProvider);

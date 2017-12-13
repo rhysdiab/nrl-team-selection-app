@@ -49,13 +49,13 @@ class App extends Component {
  }
 
   render() {
-    const { auth, signIn, signOut, teams, createNewTeam } = this.props;
+    const { auth, signIn, signOut, signInWithFacebook, teams, createNewTeam } = this.props;
     return (
       <MultiThemeProvider>
         <main className="Application">
           <div className="Application--sidebar">
             {auth.status === 'ANONYMOUS' &&
-            <SignInPage signIn={signIn} />
+            <SignInPage signIn={signIn} signInWithFacebook={signInWithFacebook} />
             }
             {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
             {auth.status === 'SIGNED_IN' &&
