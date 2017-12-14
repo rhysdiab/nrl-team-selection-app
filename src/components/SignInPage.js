@@ -4,6 +4,10 @@ import './SignInPage.scss';
 import SignIn from './SignIn';
 
 const SignInPage = ({ signIn, signInWithFacebook }) => {
+  const responseFacebook = response => {
+    console.log(response);
+  };
+
   return (
     <div className="SignInPage">
       <div className="SignInPage__wrapper">
@@ -13,7 +17,7 @@ const SignInPage = ({ signIn, signInWithFacebook }) => {
             autoLoad={true}
             fields="name,email,picture"
             onClick={signInWithFacebook}
-            callback={'responseFacebook'}
+            callback={responseFacebook}
           />
         </div>
         <div className="SignInPage__wrapper__SignIn">

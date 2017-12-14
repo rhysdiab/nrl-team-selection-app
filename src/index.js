@@ -16,9 +16,9 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //make facebook authentication work
-    //ensure signInWithFacebook action firebase
+    //ensure signInWithFacebook action fires
     //ensure startListeningToAuthChanges fires
-    //ensure correct information is brain parsed from the response object
+    //ensure correct information is being parsed from the response object
   //add full squad of players
   //find package for creating screenshot
 
