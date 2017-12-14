@@ -18,6 +18,8 @@ import { startListeningForTeams } from './actions/team';
   //make facebook authentication work
     //make response function call a new action facebookAuthStateChange and replicate code structure
     //in startListeningForAuthChanges
+      //OR
+    //Remove facebook component and have a regular button which calls the sign in method
   //add full squad of players
   //find package for creating screenshot
 
