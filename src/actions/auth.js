@@ -65,7 +65,6 @@ const updateUserTeam = user => {
 export const startListeningToAuthChanges = () => {
   return dispatch => {
     auth.onAuthStateChanged(user => {
-      console.log(user);
       if (user) {
         dispatch(updateUserTeam(user));
         database

@@ -16,7 +16,8 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //make facebook authentication work
-    //get facebook response to call the auth.onAuthStateChange function
+    //make response function call a new action facebookAuthStateChange and replicate code structure
+    //in startListeningForAuthChanges
   //add full squad of players
   //find package for creating screenshot
 
