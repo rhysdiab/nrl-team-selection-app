@@ -3,6 +3,7 @@ import pick from 'lodash/pick';
 import { updateReduxTeam } from './team';
 
 export const signIn = () => {
+  console.log('signing in with google');
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
     auth.signInWithPopup(googleAuthProvider);
@@ -63,8 +64,8 @@ const updateUserTeam = user => {
 
 export const startListeningToAuthChanges = () => {
   return dispatch => {
-    console.log('auth state changed');
     auth.onAuthStateChanged(user => {
+      console.log(user);
       if (user) {
         dispatch(updateUserTeam(user));
         database
