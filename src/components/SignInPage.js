@@ -5,7 +5,6 @@ import SignIn from './SignIn';
 
 const SignInPage = ({ signIn, signInWithFacebook, startListeningForFacebookAuthChange }) => {
   const responseFacebook = response => {
-    console.log(response)
     startListeningForFacebookAuthChange(response);
   };
 

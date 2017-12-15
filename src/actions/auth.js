@@ -64,7 +64,11 @@ const updateUserTeam = user => {
 
 export const startListeningForFacebookAuthChange = (fbResponse) => {
   return dispatch => {
-    console.log(fbResponse);
+    if (fbResponse) {
+      const newResponse = {...fbResponse};
+      //TODO convert name to displayName and picture to phoroURL in object
+      console.log(newResponse);
+    }
   }
 }
 
