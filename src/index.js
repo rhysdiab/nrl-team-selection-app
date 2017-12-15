@@ -19,13 +19,15 @@ import { startListeningForTeams } from './actions/team';
     //make response function call a new action facebookAuthStateChange and replicate code structure
     //in startListeningForAuthChanges
       //OR
-    //Remove facebook component and have a regular button which calls the sign in method
   //add full squad of players
-  //find package for creating screenshot
+    //add player manualy and adjust ui
+    //see if squads can be scraped
+  //create screenshot functionality
+    //find package for creating screenshots
+  //convert into progressive web app with push notifications and using local storage
 
 //Lower Priority
-  //work out how to change the opacity of the background picture
-  //create css for isHovered over to cause small movement
+  //work out how to change the opacity of the background picture using photoshop/sketch/invision
 
 
 injectTapEventPlugin();
