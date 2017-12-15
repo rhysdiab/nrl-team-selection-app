@@ -16,9 +16,9 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //make facebook authentication work
-    //make response function call a new action facebookAuthStateChange and replicate code structure
-    //in startListeningForAuthChanges
-      //OR
+    //create new SignedInObject with relevant facebook information
+    //replicate logic in startListeningForAuthStateChanges
+
   //add full squad of players
     //add player manualy and adjust ui
     //see if squads can be scraped
