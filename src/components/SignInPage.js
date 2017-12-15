@@ -3,9 +3,10 @@ import FacebookLogin from 'react-facebook-login';
 import './SignInPage.scss';
 import SignIn from './SignIn';
 
-const SignInPage = ({ signIn, signInWithFacebook }) => {
+const SignInPage = ({ signIn, signInWithFacebook, startListeningForFacebookAuthChange }) => {
   const responseFacebook = response => {
-    console.log(response);
+    console.log(response)
+    startListeningForFacebookAuthChange(response);
   };
 
   return (

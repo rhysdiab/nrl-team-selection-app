@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-import { signIn, signInWithFacebook, signOut } from '../actions/auth';
+import { signIn, signInWithFacebook, signOut, startListeningForFacebookAuthChange } from '../actions/auth';
 import { createNewTeam } from '../actions/team';
 
 
-const mapStateToProps = ({ auth, teams }) => {
+const mapStateToProps = ({ auth, startListeningForFacebookAuthChange, teams }) => {
   return { auth, teams };
 };
 
@@ -13,6 +13,7 @@ const mapDispatchToProps = (dispatch) => {
     signIn() { dispatch(signIn()); },
     signInWithFacebook() { dispatch(signInWithFacebook) },
     signOut() { dispatch(signOut()); },
+    startListeningForFacebookAuthChange(response) { dispatch(startListeningForFacebookAuthChange(response)) },
     createNewTeam(initialTeam, playerMoved, playerDropped, uid) { dispatch(createNewTeam(initialTeam, playerMoved, playerDropped, uid))}
   };
 };

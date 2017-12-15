@@ -62,6 +62,12 @@ const updateUserTeam = user => {
   };
 };
 
+export const startListeningForFacebookAuthChange = (fbResponse) => {
+  return dispatch => {
+    console.log(fbResponse);
+  }
+}
+
 export const startListeningToAuthChanges = () => {
   return dispatch => {
     auth.onAuthStateChanged(user => {
