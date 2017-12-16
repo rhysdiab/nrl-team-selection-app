@@ -66,8 +66,27 @@ export const startListeningForFacebookAuthChange = (fbResponse) => {
   return dispatch => {
     if (fbResponse) {
       const newResponse = {...fbResponse};
-      //TODO convert name to displayName and picture to phoroURL in object
-      console.log(newResponse);
+        //convert name to displayName and picture to phoroURL in object
+        const key1 = 'name';
+        newResponse['displayName'] = newResponse[key1];
+        delete newResponse[key1];
+
+        const key2 = 'picture';
+        newResponse['photoURL'] = newResponse[key2]['data']['url'];
+        delete newResponse[key2]['data']['url'];
+
+        dispatch(updateUserTeam(newResponse));
+
+        database
+          .ref('users')
+          .child(newResponse.uid)
+          .set(pick(newResponse, ['displayName', 'email', 'uid', 'photoURL']));
+        database.ref('admins').child(newResponse.uid).once('value').then(snapshot => {
+          if (snapshot.val()) dispatch({ type: 'SET_AS_ADMIN' });
+        });
+
+    } else {
+      dispatch(signOut());
     }
   }
 }
