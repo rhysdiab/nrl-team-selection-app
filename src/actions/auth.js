@@ -1,9 +1,13 @@
-import { auth, database, facebookAuthProvider, googleAuthProvider } from '../firebase';
+import {
+  auth,
+  database,
+  facebookAuthProvider,
+  googleAuthProvider
+} from '../firebase';
 import pick from 'lodash/pick';
 import { updateReduxTeam } from './team';
 
 export const signIn = () => {
-  console.log('signing in with google');
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
     auth.signInWithPopup(googleAuthProvider);
@@ -11,7 +15,6 @@ export const signIn = () => {
 };
 
 export const signInWithFacebook = () => {
-  console.log('signing in with facebook!!!');
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
     auth.signInWithPopup(facebookAuthProvider);
@@ -22,6 +25,7 @@ export const signOut = () => {
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
     auth.signOut();
+    dispatch(signedOut());
   };
 };
 
@@ -62,43 +66,46 @@ const updateUserTeam = user => {
   };
 };
 
-export const startListeningForFacebookAuthChange = (fbResponse) => {
+export const startListeningForFacebookAuthChange = fbResponse => {
   return dispatch => {
     if (fbResponse) {
-      //TODO check this function works and refactor
-      const newResponse = {...fbResponse};
-        //convert name to displayName and picture to phoroURL in object
-        const key1 = 'name';
-        newResponse['displayName'] = newResponse[key1];
-        delete newResponse[key1];
+      const newResponse = { ...fbResponse };
+      //convert name to displayName and picture to phoroURL in object
+      const key1 = 'name';
+      newResponse['displayName'] = newResponse[key1];
+      delete newResponse[key1];
 
-        const key2 = 'picture';
-        newResponse['photoURL'] = newResponse[key2]['data']['url'];
-        delete newResponse[key2]['data']['url'];
+      const key2 = 'picture';
+      newResponse['photoURL'] = newResponse[key2]['data']['url'];
+      delete newResponse[key2]['data']['url'];
 
-        const key3 = 'userID';
-        newResponse['uid'] = newResponse[key3];
-        delete newResponse[key3];
+      const key3 = 'userID';
+      newResponse['uid'] = newResponse[key3];
+      delete newResponse[key3];
 
-        dispatch(updateUserTeam(newResponse));
+      dispatch(updateUserTeam(newResponse));
 
-        database
-          .ref('users')
-          .child(newResponse.uid)
-          .set(pick(newResponse, ['displayName', 'email', 'uid', 'photoURL']));
-        database.ref('admins').child(newResponse.uid).once('value').then(snapshot => {
+      database
+        .ref('users')
+        .child(newResponse.uid)
+        .set(pick(newResponse, ['displayName', 'email', 'uid', 'photoURL']));
+      database
+        .ref('admins')
+        .child(newResponse.uid)
+        .once('value')
+        .then(snapshot => {
           if (snapshot.val()) dispatch({ type: 'SET_AS_ADMIN' });
         });
-
     } else {
-      dispatch(signOut());
+      dispatch(signedOut());
     }
-  }
-}
+  };
+};
 
 export const startListeningToAuthChanges = () => {
   return dispatch => {
     auth.onAuthStateChanged(user => {
+      console.log('onAth')
       if (user) {
         dispatch(updateUserTeam(user));
         database

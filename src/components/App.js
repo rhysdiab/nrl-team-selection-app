@@ -55,7 +55,7 @@ class App extends Component {
         <main className="Application">
           <div className="Application--sidebar">
             {auth.status === 'ANONYMOUS' &&
-            <SignInPage signIn={signIn} signInWithFacebook={signInWithFacebook} startListeningForFacebookAuthChange={startListeningForFacebookAuthChange} />
+            <SignInPage auth={auth} signIn={signIn} signInWithFacebook={signInWithFacebook} startListeningForFacebookAuthChange={startListeningForFacebookAuthChange} />
             }
             {auth.status === 'AWAITING_AUTH_RESPONSE' && <Loading />}
             {auth.status === 'SIGNED_IN' &&
