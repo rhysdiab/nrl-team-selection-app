@@ -16,9 +16,7 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //make facebook authentication work
-    //create new SignedInObject with relevant facebook information
-        //convert name to displayName and picture to phoroURL in object
-    //replicate logic in startListeningForAuthStateChanges
+    //check logic in auth.js for facebook log in works and refactor to clean up
 
   //add full squad of players
     //add player manualy and adjust ui

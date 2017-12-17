@@ -65,6 +65,7 @@ const updateUserTeam = user => {
 export const startListeningForFacebookAuthChange = (fbResponse) => {
   return dispatch => {
     if (fbResponse) {
+      //TODO check this function works and refactor
       const newResponse = {...fbResponse};
         //convert name to displayName and picture to phoroURL in object
         const key1 = 'name';
@@ -74,6 +75,10 @@ export const startListeningForFacebookAuthChange = (fbResponse) => {
         const key2 = 'picture';
         newResponse['photoURL'] = newResponse[key2]['data']['url'];
         delete newResponse[key2]['data']['url'];
+
+        const key3 = 'userID';
+        newResponse['uid'] = newResponse[key3];
+        delete newResponse[key3];
 
         dispatch(updateUserTeam(newResponse));
 
