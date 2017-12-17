@@ -105,7 +105,6 @@ export const startListeningForFacebookAuthChange = fbResponse => {
 export const startListeningToAuthChanges = () => {
   return dispatch => {
     auth.onAuthStateChanged(user => {
-      console.log('onAth')
       if (user) {
         dispatch(updateUserTeam(user));
         database
