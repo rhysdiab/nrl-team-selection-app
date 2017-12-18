@@ -15,8 +15,6 @@ import { startListeningForTeams } from './actions/team';
 
 //TODO
 //Priotity
-  //fix sign out button
-    //work through removing using the callback to directly sign someone in and moving to within onAthStateChanged
   //add full squad of players
     //add player manualy and adjust ui
     //see if squads can be scraped

@@ -26,7 +26,8 @@ const SignInPage = ({
           />
         </div>
         <div className="SignInPage__wrapper__SignIn">
-          <SignIn signIn={signIn} />
+          {// add google sign in button here in future if desired}
+          }
         </div>
       </div>
     </div>
