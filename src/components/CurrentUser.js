@@ -28,8 +28,6 @@ class CurrentUser extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    console.log(keyIndex(nextProps.teams.team));
-
     return (keyIndex(nextProps.teams.team, 1) !== this.state.team);
   }
 

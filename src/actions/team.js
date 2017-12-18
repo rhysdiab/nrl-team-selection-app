@@ -19,7 +19,6 @@ export const updateTeam = (newTeam, uid) => {
       team: newTeam,
       uid
     };
-
     let userAlreadyExists = false;
     //Go through the teams node of the database
     teamsRef.once('value').then(snapshot => {
@@ -68,9 +67,6 @@ export const createNewTeam = (initialTeam, playerMoved, playerDropped, uid) => {
 //event listener called when a new team is saved to the database
 export const startListeningForTeams = () => {
   return dispatch => {
-    teamsRef.once('child_added', snapshot => {
-      dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
-    });
     teamsRef.on('child_changed', snapshot => {
       dispatch(updateReduxTeam(snapshot.key, snapshot.val()));
     });

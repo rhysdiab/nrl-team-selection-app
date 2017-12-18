@@ -1,6 +1,6 @@
 import initialState from '../initial-state';
 
-export default function teamsReducer(state = initialState.teams.team, action) {
+export default function teamsReducer(state = initialState.teams, action) {
   switch(action.type) {
     case 'UPDATE_TEAM':
       return({
