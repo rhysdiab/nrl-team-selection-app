@@ -20,11 +20,28 @@ const initialState = {
       'James Graham',
       'Tyson Frizell',
       'Joel Thompson',
-      'Jack Debelin',
+      'Jack de Belin',
       'Jai Field',
       'Tariq Sims',
       'Leeson Ah Mau',
-      'Bryan Lawrie'
+      'Kurt Mann',
+      'Luciano Leilua',
+      'Bryan Lawrie',
+      'Mitchell Allgood',
+      'Patrick Herbert',
+      'Darren Nicholls',
+      'Hame Sele',
+      'Jacob Host',
+      'Zac Lomax',
+      'Jackson Ford',
+      'Reuben Garrick',
+      'Jeremy Latimore',
+      'Jordan Pereira',
+      'Josh Kerr',
+      'Reece Robson'
+
+
+
     ],
     key: 'temp'
   },
