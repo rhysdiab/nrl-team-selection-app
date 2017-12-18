@@ -28,6 +28,8 @@ class CurrentUser extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
+    console.log(keyIndex(nextProps.teams.team));
+
     return (keyIndex(nextProps.teams.team, 1) !== this.state.team);
   }
 
@@ -81,7 +83,7 @@ class CurrentUser extends React.Component {
                     const positionNumber = index + 1;
                     while (positionNumber > 13) {
                       return (
-                        <div key={player.id}>
+                        <div key={index}>
                           <PositionNumber
                             player={player.value}
                             positionNumber={positionNumber}
