@@ -10,9 +10,7 @@ import { database } from '../firebase';
 class CurrentUser extends React.Component {
   constructor(props) {
     super(props);
-    const {
-      teams
-    } = this.props;
+    const { teams } = this.props;
     const team = teams.team;
     const currentUserTeam = keyIndex(team, 1);
     this.state = {
@@ -28,7 +26,7 @@ class CurrentUser extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    return (keyIndex(nextProps.teams.team, 1) !== this.state.team);
+    return keyIndex(nextProps.teams.team, 1) !== this.state.team;
   }
 
   componentWillReceiveProps(nextprops) {
@@ -38,65 +36,105 @@ class CurrentUser extends React.Component {
   }
 
   render() {
-    const {
-      auth,
-      createNewTeam,
-      signOut,
-      teams
-    } = this.props;
+    const { auth, createNewTeam, signOut, teams } = this.props;
     const team = teams.team;
     const uid = auth.uid;
     const style = {
-      backgroundColor: "#B80002"
-    }
+      backgroundColor: '#B80002'
+    };
     return (
       <div className="CurrentUser">
-      <AppBar style={style}/>
+        <AppBar style={style} />
         <div className="TeamSelection">
-          <h5 className="TeamSelection__heading"> {auth.displayName}&apos; s Team </h5>
-            <div className="row">
-              <div className="col-6">
-                <div className="TeamSelection__panel-1 team-panel">
-                  {this.state.team.map((player, index) => {
-                    const positionNumber = index + 1;
-                    while (positionNumber <= 13) {
-                      return (
-                        <div key={player.id}>
-                          <PositionNumber
-                            player={player.value}
-                            positionNumber={positionNumber}
-                            createNewTeam={createNewTeam}
-                            team={team}
-                            uid={uid}
-                          />
-                        </div>
-                      );
-                    }
-                  })}
-                </div>
+          <h5 className="TeamSelection__heading">
+            {' '}{auth.displayName}&apos; s Team{' '}
+          </h5>
+          <div className="row">
+            <div className="col-6">
+              <div className="TeamSelection__panel-1 team-panel">
+                {this.state.team.map((player, index) => {
+                  const positionNumber = index + 1;
+                  while (positionNumber <= 13) {
+                    return (
+                      <div key={player.id}>
+                        <PositionNumber
+                          player={player.value}
+                          positionNumber={positionNumber}
+                          createNewTeam={createNewTeam}
+                          team={team}
+                          uid={uid}
+                        />
+                      </div>
+                    );
+                  }
+                })}
               </div>
-              <div className="col-6">
-                <div className="TeamSelection__panel-1 team-panel">
-                  {this.state.team.map((player, index) => {
-                    const positionNumber = index + 1;
-                    while (positionNumber > 13) {
-                      return (
-                        <div key={index}>
-                          <PositionNumber
-                            player={player.value}
-                            positionNumber={positionNumber}
-                            createNewTeam={createNewTeam}
-                            team={team}
-                            uid={uid}
-                          />
-                        </div>
-                      );
-                    }
-                  })}
+            </div>
+            <div className="col-6">
+              <div className="TeamSelection__panel-1 team-panel">
+                {this.state.team.map((player, index) => {
+                  const positionNumber = index + 1;
+                  while (positionNumber > 13 && positionNumber < 27) {
+                    return (
+                      <div key={index}>
+                        <PositionNumber
+                          player={player.value}
+                          positionNumber={positionNumber}
+                          createNewTeam={createNewTeam}
+                          team={team}
+                          uid={uid}
+                        />
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            </div>
+            <div className="container">
+              <div className="row">
+                <div className="col-6">
+                  <div className="TeamSelection__panel-1 team-panel">
+                    {this.state.team.map((player, index) => {
+                      const positionNumber = index + 1;
+                      while (positionNumber >= 27 && positionNumber <= 28) {
+                        return (
+                          <div key={index}>
+                            <PositionNumber
+                              player={player.value}
+                              positionNumber={positionNumber}
+                              createNewTeam={createNewTeam}
+                              team={team}
+                              uid={uid}
+                            />
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="TeamSelection__panel-1 team-panel">
+                    {this.state.team.map((player, index) => {
+                      const positionNumber = index + 1;
+                      while (positionNumber >= 29 && positionNumber <= 30) {
+                        return (
+                          <div key={index}>
+                            <PositionNumber
+                              player={player.value}
+                              positionNumber={positionNumber}
+                              createNewTeam={createNewTeam}
+                              team={team}
+                              uid={uid}
+                            />
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
-
+          </div>
         </div>
         <div className="sign-out-button">
           <RaisedButton label="Sign Out" onClick={signOut} />
