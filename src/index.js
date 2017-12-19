@@ -16,7 +16,7 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //add full squad of players
-    //figure out alternative to child_added method to initially update the redux state
+    //change ui to accomodate full squad of players
   //create screenshot functionality
     //find package for creating screenshots
   //convert into progressive web app with push notifications and using local storage
