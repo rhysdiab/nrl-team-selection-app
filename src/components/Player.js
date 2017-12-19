@@ -50,10 +50,12 @@ class Player extends Component {
       connectDragSource,
       isDragging,
       isOver,
-      player
+      player,
+      reservePlayer
     } = this.props;
     let hiddenClassName = '';
     let hoveredClassName = '';
+    let isReserve = '';
     if (isDragging) {
       hiddenClassName = ' hidden ';
     }
@@ -61,9 +63,13 @@ class Player extends Component {
     if (isOver) {
       hoveredClassName = ' isHovered ';
     }
+
+    if (reservePlayer) {
+      isReserve = ' isReserve';
+    }
     return connectDragSource(
       <div className="player-wrapper">
-        <span className={"player" + hiddenClassName + hoveredClassName}>
+        <span className={"player" + hiddenClassName + hoveredClassName + isReserve}>
           {player}
         </span>
       </div>

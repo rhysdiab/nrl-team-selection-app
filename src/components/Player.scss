@@ -13,5 +13,11 @@
 }
 
 .isHovered {
-  background-color: yellow;
+  background-color: yellow !important;
+}
+
+.isReserve {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }

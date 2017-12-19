@@ -61,6 +61,7 @@ class CurrentUser extends React.Component {
                           player={player.value}
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
+                          reservePlayer={false}
                           team={team}
                           uid={uid}
                         />
@@ -78,6 +79,7 @@ class CurrentUser extends React.Component {
                     return (
                       <div key={index}>
                         <PositionNumber
+                          reservePlayer={positionNumber > 17 ? true : false}
                           player={player.value}
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
@@ -103,6 +105,7 @@ class CurrentUser extends React.Component {
                               player={player.value}
                               positionNumber={positionNumber}
                               createNewTeam={createNewTeam}
+                              reservePlayer={true}
                               team={team}
                               uid={uid}
                             />
@@ -123,6 +126,7 @@ class CurrentUser extends React.Component {
                               player={player.value}
                               positionNumber={positionNumber}
                               createNewTeam={createNewTeam}
+                              reservePlayer={true}
                               team={team}
                               uid={uid}
                             />

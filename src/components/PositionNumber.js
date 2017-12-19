@@ -36,6 +36,7 @@ class PositionNumber extends Component {
       isOver,
       player,
       positionNumber,
+      reservePlayer,
       team,
       uid
     } = this.props;
@@ -53,6 +54,7 @@ class PositionNumber extends Component {
                 team={team}
                 uid={uid}
                 isOver={isOver}
+                reservePlayer={reservePlayer}
               />
           </div>
         </div>
