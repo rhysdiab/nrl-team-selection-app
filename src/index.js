@@ -16,7 +16,7 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //create screenshot functionality
-    //find package for creating screenshots
+    //try using html2Canvas
   //convert into progressive web app with push notifications and using local storage
 
 //Lower Priority

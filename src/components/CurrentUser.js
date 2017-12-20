@@ -1,11 +1,11 @@
 import React from 'react';
+import html2canvas from 'html2canvas';
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
 import keyIndex from 'react-key-index';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
-import { database } from '../firebase';
 
 class CurrentUser extends React.Component {
   constructor(props) {
@@ -33,6 +33,13 @@ class CurrentUser extends React.Component {
     const newTeam = nextprops.teams.team;
     const newCurrentUserTeam = keyIndex(newTeam, 1);
     this.setState({ team: newCurrentUserTeam });
+  }
+
+  screenshot() {
+    console.log(document.querySelector('.CurrentUser'));
+    html2canvas(document.querySelector('.TeamSelection')).then(function(canvas) {
+      document.querySelector('.CurrentUser').appendChild(canvas);
+    });
   }
 
   render() {
@@ -140,7 +147,10 @@ class CurrentUser extends React.Component {
             </div>
           </div>
         </div>
-        <div className="sign-out-button">
+        <div className="button-wrapper">
+          <RaisedButton label="Screenshot" onClick={this.screenshot} />
+        </div>
+        <div className="button-wrapper">
           <RaisedButton label="Sign Out" onClick={signOut} />
         </div>
       </div>
