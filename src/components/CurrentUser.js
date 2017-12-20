@@ -1,5 +1,4 @@
 import React from 'react';
-import html2canvas from 'html2canvas';
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
@@ -36,10 +35,7 @@ class CurrentUser extends React.Component {
   }
 
   screenshot() {
-    console.log(document.querySelector('.CurrentUser'));
-    html2canvas(document.querySelector('.TeamSelection')).then(function(canvas) {
-      document.querySelector('.CurrentUser').appendChild(canvas);
-    });
+    console.log('take screenshot');
   }
 
   render() {
