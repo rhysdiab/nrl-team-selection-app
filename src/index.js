@@ -16,7 +16,9 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //create screenshot functionality
-    //try using html2Canvas
+    // delete firebase rc and data json and reinit
+    //deploy what I currently have
+    //go to serverless functions sections and investigate
   //convert into progressive web app with push notifications and using local storage
 
 //Lower Priority
