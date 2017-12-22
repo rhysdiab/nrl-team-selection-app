@@ -15,11 +15,16 @@ import { startListeningForTeams } from './actions/team';
 
 //TODO
 //Priotity
+  //deploy current version for testing
+      // delete firebase rc and data json and reinit (look up how to deploy on firebase)
   //create screenshot functionality
-    // delete firebase rc and data json and reinit
-    //deploy what I currently have
-    //go to serverless functions sections and investigate
-  //convert into progressive web app with push notifications and using local storage
+    //go to serverless functions sections of front end masters and investigate
+    //create a serverless function for screenshot functionality
+  //convert into progressive web app
+    //remove address bar
+    //set up icon for homescreen and prompt to install
+    //set up offline usage
+    //set up push notifications
 
 //Lower Priority
   //work out how to change the opacity of the background picture using photoshop/sketch/invision
