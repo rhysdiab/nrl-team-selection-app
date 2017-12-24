@@ -16,7 +16,10 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //deploy current version for testing
-      // delete firebase rc and data json and reinit (look up how to deploy on firebase)
+      //go back into front end masters and observe the exact deploy process
+        //delete my firebase.json and database.json
+        //reinit my project
+        //follow instructoins
   //create screenshot functionality
     //go to serverless functions sections of front end masters and investigate
     //create a serverless function for screenshot functionality
