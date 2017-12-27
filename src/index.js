@@ -17,7 +17,7 @@ import { startListeningForTeams } from './actions/team';
 //Priotity
   //deploy current version for testing
       //go back into front end masters and observe the exact deploy process
-        //delete my firebase.json and database.json
+        //delete my firebase.json and firebase.rc https://stackoverflow.com/questions/43056970/can-i-cleanly-delete-firebase-cli-project
         //reinit my project
         //follow instructoins
   //create screenshot functionality
