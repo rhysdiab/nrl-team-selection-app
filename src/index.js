@@ -17,6 +17,8 @@ import { startListeningForTeams } from './actions/team';
 //Priotity
   //deploy current version for testing
       //go back into front end masters and observe the exact deploy process
+      //add new domain to facebook authentication
+      //redeploy (yarn build && firebase deploy)
   //create screenshot functionality
     //go to serverless functions sections of front end masters and investigate
     //create a serverless function for screenshot functionality
