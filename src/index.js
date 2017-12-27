@@ -16,7 +16,6 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //deploy current version for testing
-      //remove react-key-index from my project
       //go back into front end masters and observe the exact deploy process
   //create screenshot functionality
     //go to serverless functions sections of front end masters and investigate

@@ -2,7 +2,6 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
-import keyIndex from 'react-key-index';
 import './CurrentUser.scss';
 import PositionNumber from './PositionNumber';
 
@@ -10,8 +9,7 @@ class CurrentUser extends React.Component {
   constructor(props) {
     super(props);
     const { teams } = this.props;
-    const team = teams.team;
-    const currentUserTeam = keyIndex(team, 1);
+    const currentUserTeam = teams.team;
     this.state = {
       team: currentUserTeam
     };
@@ -25,12 +23,11 @@ class CurrentUser extends React.Component {
   };
 
   shouldComponentUpdate(nextProps) {
-    return keyIndex(nextProps.teams.team, 1) !== this.state.team;
+    return nextProps.teams.team !== this.state.team;
   }
 
   componentWillReceiveProps(nextprops) {
-    const newTeam = nextprops.teams.team;
-    const newCurrentUserTeam = keyIndex(newTeam, 1);
+    const newCurrentUserTeam = nextprops.teams.team;
     this.setState({ team: newCurrentUserTeam });
   }
 
@@ -59,9 +56,9 @@ class CurrentUser extends React.Component {
                   const positionNumber = index + 1;
                   while (positionNumber <= 13) {
                     return (
-                      <div key={player.id}>
+                      <div key={player}>
                         <PositionNumber
-                          player={player.value}
+                          player={player}
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
                           reservePlayer={false}
@@ -80,10 +77,10 @@ class CurrentUser extends React.Component {
                   const positionNumber = index + 1;
                   while (positionNumber > 13 && positionNumber < 27) {
                     return (
-                      <div key={index}>
+                      <div key={player}>
                         <PositionNumber
                           reservePlayer={positionNumber > 17 ? true : false}
-                          player={player.value}
+                          player={player}
                           positionNumber={positionNumber}
                           createNewTeam={createNewTeam}
                           team={team}
@@ -103,9 +100,9 @@ class CurrentUser extends React.Component {
                       const positionNumber = index + 1;
                       while (positionNumber >= 27 && positionNumber <= 28) {
                         return (
-                          <div key={index}>
+                          <div key={player}>
                             <PositionNumber
-                              player={player.value}
+                              player={player}
                               positionNumber={positionNumber}
                               createNewTeam={createNewTeam}
                               reservePlayer={true}
@@ -124,9 +121,9 @@ class CurrentUser extends React.Component {
                       const positionNumber = index + 1;
                       while (positionNumber >= 29 && positionNumber <= 30) {
                         return (
-                          <div key={index}>
+                          <div key={player}>
                             <PositionNumber
-                              player={player.value}
+                              player={player}
                               positionNumber={positionNumber}
                               createNewTeam={createNewTeam}
                               reservePlayer={true}
