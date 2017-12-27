@@ -16,10 +16,8 @@ import { startListeningForTeams } from './actions/team';
 //TODO
 //Priotity
   //deploy current version for testing
+      //remove react-key-index from my project
       //go back into front end masters and observe the exact deploy process
-        //delete my firebase.json and firebase.rc https://stackoverflow.com/questions/43056970/can-i-cleanly-delete-firebase-cli-project
-        //reinit my project
-        //follow instructoins
   //create screenshot functionality
     //go to serverless functions sections of front end masters and investigate
     //create a serverless function for screenshot functionality
