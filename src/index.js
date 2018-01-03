@@ -17,6 +17,10 @@ import { startListeningForTeams } from './actions/team';
 //Priotity
   //deploy current version for testing
       //fix facebok authentication issue on mobile
+  //2nd priority work on screenshot functionality
+    //complete cloud functions tutorial on react/redux firebase
+    //find out if can be done with cloud functions
+
   //create screenshot functionality
     //go to serverless functions sections of front end masters and investigate
     //create a serverless function for screenshot functionality
