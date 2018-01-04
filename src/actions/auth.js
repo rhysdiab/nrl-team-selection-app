@@ -17,7 +17,7 @@ export const signIn = () => {
 export const signInWithFacebook = () => {
   return dispatch => {
     dispatch({ type: 'ATTEMPTING_LOGIN' });
-    auth.signInWithPopup(facebookAuthProvider);
+    auth.signInWithRedirect(facebookAuthProvider);
   };
 };
 
