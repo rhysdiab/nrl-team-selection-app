@@ -15,6 +15,9 @@ import { startListeningForTeams } from './actions/team';
 
 //TODO
 //Priotity
+  //get local environment working on my iphone
+  //create new app and change app ids and play with redirect urls
+  
   //deploy current version for testing
       //fix facebok authentication issue on mobile
   //2nd priority work on screenshot functionality

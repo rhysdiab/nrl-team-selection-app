@@ -21,6 +21,7 @@ const SignInPage = ({
             appId="516067968764277"
             autoLoad={true}
             fields="name,email,picture"
+            scope="public_profile,user_friends,user_actions.books"
             onClick={signInWithFacebook}
             callback={responseFacebook}
           />

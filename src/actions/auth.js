@@ -68,6 +68,10 @@ const updateUserTeam = user => {
 
 export const startListeningForFacebookAuthChange = fbResponse => {
   return dispatch => {
+    auth.getRedirectResult().then(function(result) {
+      console.log(result);
+    });
+
     if (fbResponse) {
       const newResponse = { ...fbResponse };
       //convert name to displayName and picture to phoroURL in object
