@@ -15,9 +15,11 @@ import { startListeningForTeams } from './actions/team';
 
 //TODO
 //Priotity
+  //stop logging in twice
+  //create 2 separate facebook projects for dev and production
   //get local environment working on my iphone
   //create new app and change app ids and play with redirect urls
-  
+
   //deploy current version for testing
       //fix facebok authentication issue on mobile
   //2nd priority work on screenshot functionality
